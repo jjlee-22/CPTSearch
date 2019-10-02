@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         
-        backgroundImageView.image = UIImage(named: <#T##String#>)
+        backgroundImageView.image = UIImage(named: "blue.jpg")
     }
 }
 
