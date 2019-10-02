@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     
     @IBOutlet var navView: UIView!
 
+    let backgroundImageView = UIImageView()
+    
+    
     
     @IBAction func navButtonTapped(_ sender: Any) {
         navView.isHidden = !navView.isHidden
@@ -26,6 +29,18 @@ class ViewController: UIViewController {
         
         // Lindsey was here
         // Truc is here
+        setBackground()
+    }
+    
+    func setBackground(){
+        view.addSubview(backgroundImageView)
+        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        
+        backgroundImageView.image = UIImage(named: <#T##String#>)
     }
 }
 

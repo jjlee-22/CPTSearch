@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		888C6D5023453B5500C624BD /* clevelandclinicbackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 888C6D4F23453B5500C624BD /* clevelandclinicbackground.jpg */; };
 		D413B9F1233020590097CE56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D413B9F0233020590097CE56 /* AppDelegate.swift */; };
 		D413B9F3233020590097CE56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D413B9F2233020590097CE56 /* ViewController.swift */; };
 		D413B9F6233020590097CE56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D413B9F4233020590097CE56 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		888C6D4F23453B5500C624BD /* clevelandclinicbackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = clevelandclinicbackground.jpg; sourceTree = "<group>"; };
 		D413B9ED233020590097CE56 /* CPTSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPTSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D413B9F0233020590097CE56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D413B9F2233020590097CE56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		888C6D4E23453B2F00C624BD /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				888C6D4F23453B5500C624BD /* clevelandclinicbackground.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		D413B9E4233020590097CE56 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +64,7 @@
 		D413B9EF233020590097CE56 /* CPTSearch */ = {
 			isa = PBXGroup;
 			children = (
+				888C6D4E23453B2F00C624BD /* Images */,
 				D413B9F0233020590097CE56 /* AppDelegate.swift */,
 				D413B9F2233020590097CE56 /* ViewController.swift */,
 				D413B9F4233020590097CE56 /* Main.storyboard */,
@@ -122,6 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				888C6D5023453B5500C624BD /* clevelandclinicbackground.jpg in Resources */,
 				D413B9FB2330205C0097CE56 /* LaunchScreen.storyboard in Resources */,
 				D413B9F82330205C0097CE56 /* Assets.xcassets in Resources */,
 				D413B9F6233020590097CE56 /* Main.storyboard in Resources */,
