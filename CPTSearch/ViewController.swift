@@ -11,17 +11,21 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var navView: UIView!
 
+    
+    @IBAction func navButtonTapped(_ sender: Any) {
+        navView.isHidden = !navView.isHidden
+    }
+    
     // This method only runs after the view loads
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         // Lindsey was here
-        
         // Truc is here
     }
-
-
 }
 
