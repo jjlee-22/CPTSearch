@@ -13,6 +13,9 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet var navView: UIView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var CPTCodeLabel: UILabel!
 
     let backgroundImageView = UIImageView()
     
@@ -29,7 +32,12 @@ class ViewController: UIViewController {
         
         // Lindsey was here
         // Truc is here
-        setBackground()
+        //setBackground()
+        if(CPTCodeData.isEmpty == false){
+               CPTCodeLabel.text = CPTCodeData[myIndex]
+               titleLabel.text = shortData[myIndex]
+               descriptionLabel.text = longData[myIndex]
+               }
     }
     
     func setBackground(){
