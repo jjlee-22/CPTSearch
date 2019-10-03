@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+    <array>
+          <string>0042T</string>
+          <string>CT PERFUSION W/CONTRAST CBF</string>
+          <string>CEREBRAL PERFUSION ANALYSIS USING COMPUTED TOMOGRAPHY WITH CONTRAST ADMINISTRATION, INCLUDING POST-PROCESSING OF PARAMETRIC MAPS WITH DETERMINATION OF CEREBRAL BLOOD FLOW, CEREBRAL BLOOD VOLUME, AND MEAN TRANSIT TIME</string>
+    </array>
+    <array>
+          <string>70450</string>
+          <string>CT HEAD/BRAIN W/O DYE</string>
+          <string>COMPUTED TOMOGRAPHY, HEAD OR BRAIN; WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>70460</string>
+          <string>CT HEAD/BRAIN W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, HEAD OR BRAIN; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>70470</string>
+          <string>CT HEAD/BRAIN W/O &amp; W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, HEAD OR BRAIN; WITHOUT CONTRAST MATERIAL, FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SECTIONS</string>
+    </array>
+    <array>
+          <string>70480</string>
+          <string>CT ORBIT/EAR/FOSSA W/O DYE</string>
+          <string>COMPUTED TOMOGRAPHY, ORBIT, SELLA, OR POSTERIOR FOSSA OR OUTER, MIDDLE, OR INNER EAR; WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>70481</string>
+          <string>CT ORBIT/EAR/FOSSA W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, ORBIT, SELLA, OR POSTERIOR FOSSA OR OUTER, MIDDLE, OR INNER EAR; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>70482</string>
+          <string>CT ORBIT/EAR/FOSSA W/O&amp;W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, ORBIT, SELLA, OR POSTERIOR FOSSA OR OUTER, MIDDLE, OR INNER EAR; WITHOUT CONTRAST MATERIAL, FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SECTIONS</string>
+    </array>
+    <array>
+          <string>70486</string>
+          <string>CT MAXILLOFACIAL W/O DYE</string>
+          <string>COMPUTED TOMOGRAPHY, MAXILLOFACIAL AREA; WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>70487</string>
+          <string>CT MAXILLOFACIAL W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, MAXILLOFACIAL AREA; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>70488</string>
+          <string>CT MAXILLOFACIAL W/O &amp; W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, MAXILLOFACIAL AREA; WITHOUT CONTRAST MATERIAL, FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SECTIONS</string>
+    </array>
+    <array>
+          <string>70490</string>
+          <string>CT SOFT TISSUE NECK W/O DYE</string>
+          <string>COMPUTED TOMOGRAPHY, SOFT TISSUE NECK; WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>70491</string>
+          <string>CT SOFT TISSUE NECK W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, SOFT TISSUE NECK; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>70492</string>
+          <string>CT SFT TSUE NCK W/O &amp; W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, SOFT TISSUE NECK; WITHOUT CONTRAST MATERIAL FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SECTIONS</string>
+    </array>
+    <array>
+          <string>70496</string>
+          <string>CT ANGIOGRAPHY HEAD</string>
+          <string>COMPUTED TOMOGRAPHIC ANGIOGRAPHY, HEAD, WITH CONTRAST MATERIAL(S), INCLUDING NONCONTRAST IMAGES, IF PERFORMED, AND IMAGE POSTPROCESSING</string>
+    </array>
+    <array>
+          <string>70498</string>
+          <string>CT ANGIOGRAPHY NECK</string>
+          <string>COMPUTED TOMOGRAPHIC ANGIOGRAPHY, NECK, WITH CONTRAST MATERIAL(S), INCLUDING NONCONTRAST IMAGES, IF PERFORMED, AND IMAGE POSTPROCESSING</string>
+    </array>
+    <array>
+          <string>70540</string>
+          <string>MRI ORBIT/FACE/NECK W/O DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, ORBIT, FACE, AND/OR NECK; WITHOUT CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>70542</string>
+          <string>MRI ORBIT/FACE/NECK W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, ORBIT, FACE, AND/OR NECK; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>70543</string>
+          <string>MRI ORBT/FAC/NCK W/O &amp;W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, ORBIT, FACE, AND/OR NECK; WITHOUT CONTRAST MATERIAL(S), FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SEQUENCES</string>
+    </array>
+    <array>
+          <string>70544</string>
+          <string>MR ANGIOGRAPHY HEAD W/O DYE</string>
+          <string>MAGNETIC RESONANCE ANGIOGRAPHY, HEAD; WITHOUT CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>70545</string>
+          <string>MR ANGIOGRAPHY HEAD W/DYE</string>
+          <string>MAGNETIC RESONANCE ANGIOGRAPHY, HEAD; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>70546</string>
+          <string>MR ANGIOGRAPH HEAD W/O&amp;W/DYE</string>
+          <string>MAGNETIC RESONANCE ANGIOGRAPHY, HEAD; WITHOUT CONTRAST MATERIAL(S), FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SEQUENCES</string>
+    </array>
+    <array>
+          <string>70547</string>
+          <string>MR ANGIOGRAPHY NECK W/O DYE</string>
+          <string>MAGNETIC RESONANCE ANGIOGRAPHY, NECK; WITHOUT CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>70548</string>
+          <string>MR ANGIOGRAPHY NECK W/DYE</string>
+          <string>MAGNETIC RESONANCE ANGIOGRAPHY, NECK; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>70549</string>
+          <string>MR ANGIOGRAPH NECK W/O&amp;W/DYE</string>
+          <string>MAGNETIC RESONANCE ANGIOGRAPHY, NECK; WITHOUT CONTRAST MATERIAL(S), FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SEQUENCES</string>
+    </array>
+    <array>
+          <string>70551</string>
+          <string>MRI BRAIN STEM W/O DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, BRAIN (INCLUDING BRAIN STEM); WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>70552</string>
+          <string>MRI BRAIN STEM W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, BRAIN (INCLUDING BRAIN STEM); WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>70553</string>
+          <string>MRI BRAIN STEM W/O &amp; W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, BRAIN (INCLUDING BRAIN STEM); WITHOUT CONTRAST MATERIAL, FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SEQUENCES</string>
+    </array>
+    <array>
+          <string>70557</string>
+          <string>MRI BRAIN W/O DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, BRAIN (INCLUDING BRAIN STEM AND SKULL BASE), DURING OPEN INTRACRANIAL PROCEDURE (EG, TO ASSESS FOR RESIDUAL TUMOR OR RESIDUAL VASCULAR MALFORMATION); WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>70558</string>
+          <string>MRI BRAIN W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, BRAIN (INCLUDING BRAIN STEM AND SKULL BASE), DURING OPEN INTRACRANIAL PROCEDURE (EG, TO ASSESS FOR RESIDUAL TUMOR OR RESIDUAL VASCULAR MALFORMATION); WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>70559</string>
+          <string>MRI BRAIN W/O &amp; W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, BRAIN (INCLUDING BRAIN STEM AND SKULL BASE), DURING OPEN INTRACRANIAL PROCEDURE (EG, TO ASSESS FOR RESIDUAL TUMOR OR RESIDUAL VASCULAR MALFORMATION); WITHOUT CONTRAST MATERIAL(S), FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SEQUENCES</string>
+    </array>
+    <array>
+          <string>71250</string>
+          <string>CT THORAX W/O DYE</string>
+          <string>COMPUTED TOMOGRAPHY, THORAX; WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>71260</string>
+          <string>CT THORAX W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, THORAX; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>71270</string>
+          <string>CT THORAX W/O &amp; W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, THORAX; WITHOUT CONTRAST MATERIAL, FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SECTIONS</string>
+    </array>
+    <array>
+          <string>71275</string>
+          <string>CT ANGIOGRAPHY CHEST</string>
+          <string>COMPUTED TOMOGRAPHIC ANGIOGRAPHY, CHEST (NONCORONARY), WITH CONTRAST MATERIAL(S), INCLUDING NONCONTRAST IMAGES, IF PERFORMED, AND IMAGE POSTPROCESSING</string>
+    </array>
+    <array>
+          <string>71550</string>
+          <string>MRI CHEST W/O DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, CHEST (EG, FOR EVALUATION OF HILAR AND MEDIASTINAL LYMPHADENOPATHY); WITHOUT CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>71551</string>
+          <string>MRI CHEST W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, CHEST (EG, FOR EVALUATION OF HILAR AND MEDIASTINAL LYMPHADENOPATHY); WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>71552</string>
+          <string>MRI CHEST W/O &amp; W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, CHEST (EG, FOR EVALUATION OF HILAR AND MEDIASTINAL LYMPHADENOPATHY); WITHOUT CONTRAST MATERIAL(S), FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SEQUENCES</string>
+    </array>
+    <array>
+          <string>71555</string>
+          <string>MRI ANGIO CHEST W OR W/O DYE</string>
+          <string>MAGNETIC RESONANCE ANGIOGRAPHY, CHEST (EXCLUDING MYOCARDIUM), WITH OR WITHOUT CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>72125</string>
+          <string>CT NECK SPINE W/O DYE</string>
+          <string>COMPUTED TOMOGRAPHY, CERVICAL SPINE; WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>72126</string>
+          <string>CT NECK SPINE W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, CERVICAL SPINE; WITH CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>72127</string>
+          <string>CT NECK SPINE W/O &amp; W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, CERVICAL SPINE; WITHOUT CONTRAST MATERIAL, FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SECTIONS</string>
+    </array>
+    <array>
+          <string>72128</string>
+          <string>CT CHEST SPINE W/O DYE</string>
+          <string>COMPUTED TOMOGRAPHY, THORACIC SPINE; WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>72129</string>
+          <string>CT CHEST SPINE W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, THORACIC SPINE; WITH CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>72130</string>
+          <string>CT CHEST SPINE W/O &amp; W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, THORACIC SPINE; WITHOUT CONTRAST MATERIAL, FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SECTIONS</string>
+    </array>
+    <array>
+          <string>72131</string>
+          <string>CT LUMBAR SPINE W/O DYE</string>
+          <string>COMPUTED TOMOGRAPHY, LUMBAR SPINE; WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>72132</string>
+          <string>CT LUMBAR SPINE W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, LUMBAR SPINE; WITH CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>72133</string>
+          <string>CT LUMBAR SPINE W/O &amp; W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, LUMBAR SPINE; WITHOUT CONTRAST MATERIAL, FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SECTIONS</string>
+    </array>
+    <array>
+          <string>72141</string>
+          <string>MRI NECK SPINE W/O DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, SPINAL CANAL AND CONTENTS, CERVICAL; WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>72142</string>
+          <string>MRI NECK SPINE W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, SPINAL CANAL AND CONTENTS, CERVICAL; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>72146</string>
+          <string>MRI CHEST SPINE W/O DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, SPINAL CANAL AND CONTENTS, THORACIC; WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>72147</string>
+          <string>MRI CHEST SPINE W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, SPINAL CANAL AND CONTENTS, THORACIC; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>72148</string>
+          <string>MRI LUMBAR SPINE W/O DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, SPINAL CANAL AND CONTENTS, LUMBAR; WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>72149</string>
+          <string>MRI LUMBAR SPINE W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, SPINAL CANAL AND CONTENTS, LUMBAR; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>72156</string>
+          <string>MRI NECK SPINE W/O &amp; W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, SPINAL CANAL AND CONTENTS, WITHOUT CONTRAST MATERIAL, FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SEQUENCES; CERVICAL</string>
+    </array>
+    <array>
+          <string>72157</string>
+          <string>MRI CHEST SPINE W/O &amp; W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, SPINAL CANAL AND CONTENTS, WITHOUT CONTRAST MATERIAL, FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SEQUENCES; THORACIC</string>
+    </array>
+    <array>
+          <string>72158</string>
+          <string>MRI LUMBAR SPINE W/O &amp; W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, SPINAL CANAL AND CONTENTS, WITHOUT CONTRAST MATERIAL, FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SEQUENCES; LUMBAR</string>
+    </array>
+    <array>
+          <string>72159</string>
+          <string>MR ANGIO SPINE W/O&amp;W/DYE</string>
+          <string>MAGNETIC RESONANCE ANGIOGRAPHY, SPINAL CANAL AND CONTENTS, WITH OR WITHOUT CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>72191</string>
+          <string>CT ANGIOGRAPH PELV W/O&amp;W/DYE</string>
+          <string>COMPUTED TOMOGRAPHIC ANGIOGRAPHY, PELVIS, WITH CONTRAST MATERIAL(S), INCLUDING NONCONTRAST IMAGES, IF PERFORMED, AND IMAGE POSTPROCESSING</string>
+    </array>
+    <array>
+          <string>72192</string>
+          <string>CT PELVIS W/O DYE</string>
+          <string>COMPUTED TOMOGRAPHY, PELVIS; WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>72193</string>
+          <string>CT PELVIS W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, PELVIS; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>72194</string>
+          <string>CT PELVIS W/O &amp; W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, PELVIS; WITHOUT CONTRAST MATERIAL, FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SECTIONS</string>
+    </array>
+    <array>
+          <string>72195</string>
+          <string>MRI PELVIS W/O DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, PELVIS; WITHOUT CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>72196</string>
+          <string>MRI PELVIS W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, PELVIS; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>72197</string>
+          <string>MRI PELVIS W/O &amp; W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, PELVIS; WITHOUT CONTRAST MATERIAL(S), FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SEQUENCES</string>
+    </array>
+    <array>
+          <string>72198</string>
+          <string>MR ANGIO PELVIS W/O &amp; W/DYE</string>
+          <string>MAGNETIC RESONANCE ANGIOGRAPHY, PELVIS, WITH OR WITHOUT CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>73200</string>
+          <string>CT UPPER EXTREMITY W/O DYE</string>
+          <string>COMPUTED TOMOGRAPHY, UPPER EXTREMITY; WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>73201</string>
+          <string>CT UPPER EXTREMITY W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, UPPER EXTREMITY; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>73202</string>
+          <string>CT UPPR EXTREMITY W/O&amp;W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, UPPER EXTREMITY; WITHOUT CONTRAST MATERIAL, FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SECTIONS</string>
+    </array>
+    <array>
+          <string>73206</string>
+          <string>CT ANGIO UPR EXTRM W/O&amp;W/DYE</string>
+          <string>COMPUTED TOMOGRAPHIC ANGIOGRAPHY, UPPER EXTREMITY, WITH CONTRAST MATERIAL(S), INCLUDING NONCONTRAST IMAGES, IF PERFORMED, AND IMAGE POSTPROCESSING</string>
+    </array>
+    <array>
+          <string>73218</string>
+          <string>MRI UPPER EXTREMITY W/O DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, UPPER EXTREMITY, OTHER THAN JOINT; WITHOUT CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>73219</string>
+          <string>MRI UPPER EXTREMITY W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, UPPER EXTREMITY, OTHER THAN JOINT; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>73220</string>
+          <string>MRI UPPR EXTREMITY W/O&amp;W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, UPPER EXTREMITY, OTHER THAN JOINT; WITHOUT CONTRAST MATERIAL(S), FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SEQUENCES</string>
+    </array>
+    <array>
+          <string>73221</string>
+          <string>MRI JOINT UPR EXTREM W/O DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, ANY JOINT OF UPPER EXTREMITY; WITHOUT CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>73222</string>
+          <string>MRI JOINT UPR EXTREM W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, ANY JOINT OF UPPER EXTREMITY; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>73223</string>
+          <string>MRI JOINT UPR EXTR W/O&amp;W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, ANY JOINT OF UPPER EXTREMITY; WITHOUT CONTRAST MATERIAL(S), FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SEQUENCES</string>
+    </array>
+    <array>
+          <string>73225</string>
+          <string>MR ANGIO UPR EXTR W/O&amp;W/DYE</string>
+          <string>MAGNETIC RESONANCE ANGIOGRAPHY, UPPER EXTREMITY, WITH OR WITHOUT CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>73700</string>
+          <string>CT LOWER EXTREMITY W/O DYE</string>
+          <string>COMPUTED TOMOGRAPHY, LOWER EXTREMITY; WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>73701</string>
+          <string>CT LOWER EXTREMITY W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, LOWER EXTREMITY; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>73702</string>
+          <string>CT LWR EXTREMITY W/O&amp;W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, LOWER EXTREMITY; WITHOUT CONTRAST MATERIAL, FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SECTIONS</string>
+    </array>
+    <array>
+          <string>73706</string>
+          <string>CT ANGIO LWR EXTR W/O&amp;W/DYE</string>
+          <string>COMPUTED TOMOGRAPHIC ANGIOGRAPHY, LOWER EXTREMITY, WITH CONTRAST MATERIAL(S), INCLUDING NONCONTRAST IMAGES, IF PERFORMED, AND IMAGE POSTPROCESSING</string>
+    </array>
+    <array>
+          <string>73718</string>
+          <string>MRI LOWER EXTREMITY W/O DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, LOWER EXTREMITY OTHER THAN JOINT; WITHOUT CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>73719</string>
+          <string>MRI LOWER EXTREMITY W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, LOWER EXTREMITY OTHER THAN JOINT; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>73720</string>
+          <string>MRI LWR EXTREMITY W/O&amp;W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, LOWER EXTREMITY OTHER THAN JOINT; WITHOUT CONTRAST MATERIAL(S), FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SEQUENCES</string>
+    </array>
+    <array>
+          <string>73721</string>
+          <string>MRI JNT OF LWR EXTRE W/O DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, ANY JOINT OF LOWER EXTREMITY; WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>73722</string>
+          <string>MRI JOINT OF LWR EXTR W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, ANY JOINT OF LOWER EXTREMITY; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>73723</string>
+          <string>MRI JOINT LWR EXTR W/O&amp;W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, ANY JOINT OF LOWER EXTREMITY; WITHOUT CONTRAST MATERIAL(S), FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SEQUENCES</string>
+    </array>
+    <array>
+          <string>73725</string>
+          <string>MR ANG LWR EXT W OR W/O DYE</string>
+          <string>MAGNETIC RESONANCE ANGIOGRAPHY, LOWER EXTREMITY, WITH OR WITHOUT CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>74150</string>
+          <string>CT ABDOMEN W/O DYE</string>
+          <string>COMPUTED TOMOGRAPHY, ABDOMEN; WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>74160</string>
+          <string>CT ABDOMEN W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, ABDOMEN; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>74170</string>
+          <string>CT ABDOMEN W/O &amp; W/DYE</string>
+          <string>COMPUTED TOMOGRAPHY, ABDOMEN; WITHOUT CONTRAST MATERIAL, FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SECTIONS</string>
+    </array>
+    <array>
+          <string>74174</string>
+          <string>CT ANGIO ABD&amp;PELV W/O&amp;W/DYE</string>
+          <string>COMPUTED TOMOGRAPHIC ANGIOGRAPHY, ABDOMEN AND PELVIS, WITH CONTRAST MATERIAL(S), INCLUDING NONCONTRAST IMAGES, IF PERFORMED, AND IMAGE POSTPROCESSING</string>
+    </array>
+    <array>
+          <string>74175</string>
+          <string>CT ANGIO ABDOM W/O &amp; W/DYE</string>
+          <string>COMPUTED TOMOGRAPHIC ANGIOGRAPHY, ABDOMEN, WITH CONTRAST MATERIAL(S), INCLUDING NONCONTRAST IMAGES, IF PERFORMED, AND IMAGE POSTPROCESSING</string>
+    </array>
+    <array>
+          <string>74176</string>
+          <string>CT ABD &amp; PELVIS W/O CONTRAST</string>
+          <string>COMPUTED TOMOGRAPHY, ABDOMEN AND PELVIS; WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>74177</string>
+          <string>CT ABD &amp; PELV W/CONTRAST</string>
+          <string>COMPUTED TOMOGRAPHY, ABDOMEN AND PELVIS; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>74178</string>
+          <string>CT ABD &amp; PELV 1/&gt; REGNS</string>
+          <string>COMPUTED TOMOGRAPHY, ABDOMEN AND PELVIS; WITHOUT CONTRAST MATERIAL IN ONE OR BOTH BODY REGIONS, FOLLOWED BY CONTRAST MATERIAL(S) AND FURTHER SECTIONS IN ONE OR BOTH BODY REGIONS</string>
+    </array>
+    <array>
+          <string>74181</string>
+          <string>MRI ABDOMEN W/O DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, ABDOMEN; WITHOUT CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>74182</string>
+          <string>MRI ABDOMEN W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, ABDOMEN; WITH CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>74183</string>
+          <string>MRI ABDOMEN W/O &amp; W/DYE</string>
+          <string>MAGNETIC RESONANCE (EG, PROTON) IMAGING, ABDOMEN; WITHOUT CONTRAST MATERIAL(S), FOLLOWED BY WITH CONTRAST MATERIAL(S) AND FURTHER SEQUENCES</string>
+    </array>
+    <array>
+          <string>74185</string>
+          <string>MRI ANGIO ABDOM W ORW/O DYE</string>
+          <string>MAGNETIC RESONANCE ANGIOGRAPHY, ABDOMEN, WITH OR WITHOUT CONTRAST MATERIAL(S)</string>
+    </array>
+    <array>
+          <string>74261</string>
+          <string>CT COLONOGRAPHY DX</string>
+          <string>COMPUTED TOMOGRAPHIC (CT) COLONOGRAPHY, DIAGNOSTIC, INCLUDING IMAGE POSTPROCESSING; WITHOUT CONTRAST MATERIAL</string>
+    </array>
+    <array>
+          <string>74262</string>
+          <string>CT COLONOGRAPHY DX W/DYE</string>
+          <string>COMPUTED TOMOGRAPHIC (CT) COLONOGRAPHY, DIAGNOSTIC, INCLUDING IMAGE POSTPROCESSING; WITH CONTRAST MATERIAL(S) INCLUDING NON-CONTRAST IMAGES, IF PERFORMED</string>
+    </array>
+    <array>
+          <string>74263</string>
+          <string>CT COLONOGRAPHY SCREENING</string>
+          <string>COMPUTED TOMOGRAPHIC (CT) COLONOGRAPHY, SCREENING, INCLUDING IMAGE POSTPROCESSING</string>
+    </array>
+    <array>
+          <string>75571</string>
+          <string>CT HRT W/O DYE W/CA TEST</string>
+          <string>COMPUTED TOMOGRAPHY, HEART, WITHOUT CONTRAST MATERIAL, WITH QUANTITATIVE EVALUATION OF CORONARY CALCIUM</string>
+    </array>
+    <array>
+          <string>75572</string>
+          <string>CT HRT W/3D IMAGE</string>
+          <string>COMPUTED TOMOGRAPHY, HEART, WITH CONTRAST MATERIAL, FOR EVALUATION OF CARDIAC STRUCTURE AND MORPHOLOGY (INCLUDING 3D IMAGE POSTPROCESSING, ASSESSMENT OF CARDIAC FUNCTION, AND EVALUATION OF VENOUS STRUCTURES, IF PERFORMED)</string>
+    </array>
+    <array>
+          <string>75573</string>
+          <string>CT HRT W/3D IMAGE CONGEN</string>
+          <string>COMPUTED TOMOGRAPHY, HEART, WITH CONTRAST MATERIAL, FOR EVALUATION OF CARDIAC STRUCTURE AND MORPHOLOGY IN THE SETTING OF CONGENITAL HEART DISEASE (INCLUDING 3D IMAGE POSTPROCESSING, ASSESSMENT OF LV CARDIAC FUNCTION, RV STRUCTURE AND FUNCTION AND EVALUATION OF VENOUS STRUCTURES, IF PERFORMED)</string>
+    </array>
+    <array>
+          <string>75574</string>
+          <string>CT ANGIO HRT W/3D IMAGE</string>
+          <string>COMPUTED TOMOGRAPHIC ANGIOGRAPHY, HEART, CORONARY ARTERIES AND BYPASS GRAFTS (WHEN PRESENT), WITH CONTRAST MATERIAL, INCLUDING 3D IMAGE POSTPROCESSING (INCLUDING EVALUATION OF CARDIAC STRUCTURE AND MORPHOLOGY, ASSESSMENT OF CARDIAC FUNCTION, AND EVALUATION OF VENOUS STRUCTURES, IF PERFORMED)</string>
+    </array>
+    <array>
+          <string>75635</string>
+          <string>CT ANGIO ABDOMINAL ARTERIES</string>
+          <string>COMPUTED TOMOGRAPHIC ANGIOGRAPHY, ABDOMINAL AORTA AND BILATERAL ILIOFEMORAL LOWER EXTREMITY RUNOFF, WITH CONTRAST MATERIAL(S), INCLUDING NONCONTRAST IMAGES, IF PERFORMED, AND IMAGE POSTPROCESSING</string>
+    </array>
+    <array>
+          <string>76390</string>
+          <string>MR SPECTROSCOPY</string>
+          <string>MAGNETIC RESONANCE SPECTROSCOPY</string>
+    </array>
+    <array>
+          <string>76497</string>
+          <string>CT PROCEDURE</string>
+          <string>UNLISTED COMPUTED TOMOGRAPHY PROCEDURE (EG, DIAGNOSTIC, INTERVENTIONAL)</string>
+    </array>
+    <array>
+          <string>76498</string>
+          <string>MRI PROCEDURE</string>
+          <string>UNLISTED MAGNETIC RESONANCE PROCEDURE (EG, DIAGNOSTIC, INTERVENTIONAL)</string>
+    </array>
+    <array>
+          <string>77011</string>
+          <string>CT SCAN FOR LOCALIZATION</string>
+          <string>COMPUTED TOMOGRAPHY GUIDANCE FOR STEREOTACTIC LOCALIZATION</string>
+    </array>
+    <array>
+          <string>77012</string>
+          <string>CT SCAN FOR NEEDLE BIOPSY</string>
+          <string>COMPUTED TOMOGRAPHY GUIDANCE FOR NEEDLE PLACEMENT (EG, BIOPSY, ASPIRATION, INJECTION, LOCALIZATION DEVICE), RADIOLOGICAL SUPERVISION AND INTERPRETATION</string>
+    </array>
+    <array>
+          <string>77013</string>
+          <string>CT GUIDE FOR TISSUE ABLATION</string>
+          <string>COMPUTED TOMOGRAPHY GUIDANCE FOR, AND MONITORING OF, PARENCHYMAL TISSUE ABLATION</string>
+    </array>
+    <array>
+          <string>77014</string>
+          <string>CT SCAN FOR THERAPY GUIDE</string>
+          <string>COMPUTED TOMOGRAPHY GUIDANCE FOR PLACEMENT OF RADIATION THERAPY FIELDS</string>
+    </array>
+    <array>
+          <string>77021</string>
+          <string>MRI GUIDANCE NDL PLMT RS&amp;I</string>
+          <string>MAGNETIC RESONANCE IMAGING GUIDANCE FOR NEEDLE PLACEMENT (EG, FOR BIOPSY, NEEDLE ASPIRATION, INJECTION, OR PLACEMENT OF LOCALIZATION DEVICE) RADIOLOGICAL SUPERVISION AND INTERPRETATION</string>
+    </array>
+    <array>
+          <string>77022</string>
+          <string>MRI FOR TISSUE ABLATION</string>
+          <string>MAGNETIC RESONANCE GUIDANCE FOR, AND MONITORING OF, PARENCHYMAL TISSUE ABLATION</string>
+    </array>
+    <array>
+          <string>77058</string>
+          <string>MRI ONE BREAST</string>
+          <string>MAGNETIC RESONANCE IMAGING, BREAST, WITHOUT AND/OR WITH CONTRAST MATERIAL(S); UNILATERAL</string>
+    </array>
+    <array>
+          <string>77059</string>
+          <string>MRI BOTH BREASTS</string>
+          <string>MAGNETIC RESONANCE IMAGING, BREAST, WITHOUT AND/OR WITH CONTRAST MATERIAL(S); BILATERAL</string>
+    </array>
+    <array>
+          <string>77078</string>
+          <string>CT BONE DENSITY AXIAL</string>
+          <string>COMPUTED TOMOGRAPHY, BONE MINERAL DENSITY STUDY, 1 OR MORE SITES, AXIAL SKELETON (EG, HIPS, PELVIS, SPINE)</string>
+    </array>
+</array>
+</plist>
