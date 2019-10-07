@@ -35,7 +35,7 @@ class ViewController: UIViewController {
                titleLabel.text = shortData[myIndex]
                descriptionLabel.text = longData[myIndex]
         }
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"blue.jpg")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"unnamed.jpg")!)
     }
 }
 
