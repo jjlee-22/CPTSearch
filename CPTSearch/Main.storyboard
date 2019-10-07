@@ -182,13 +182,10 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mK5-KC-QG4" customClass="CatalogDashboardButton">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mK5-KC-QG4" customClass="CatalogDashboardButton">
                                 <rect key="frame" x="50" y="265" width="314" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="separatorColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="OJo-PE-15p"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="76" id="Xik-QL-JYW"/>
-                                </constraints>
                                 <state key="normal" title="Catalog"/>
                                 <connections>
                                     <segue destination="2Cu-fc-u1N" kind="show" id="d5P-2d-Edb"/>
@@ -208,12 +205,8 @@
                         <constraints>
                             <constraint firstAttribute="bottomMargin" secondItem="vBL-Cl-XbL" secondAttribute="bottom" constant="-83" id="0Th-3g-oNg"/>
                             <constraint firstItem="vBL-Cl-XbL" firstAttribute="leading" secondItem="s1B-Br-ZIg" secondAttribute="leading" id="1H6-hf-W1A"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mK5-KC-QG4" secondAttribute="trailing" constant="30" id="8tx-FV-s4p"/>
-                            <constraint firstItem="mK5-KC-QG4" firstAttribute="leading" secondItem="zIv-6O-OKK" secondAttribute="leadingMargin" constant="30" id="ix5-Nr-mV5"/>
                             <constraint firstItem="vBL-Cl-XbL" firstAttribute="top" secondItem="s1B-Br-ZIg" secondAttribute="top" id="pbK-TD-E5y"/>
-                            <constraint firstItem="s1B-Br-ZIg" firstAttribute="trailing" secondItem="mK5-KC-QG4" secondAttribute="trailing" constant="50" id="pcE-OV-jBd"/>
                             <constraint firstItem="s1B-Br-ZIg" firstAttribute="trailing" secondItem="vBL-Cl-XbL" secondAttribute="trailing" constant="269" id="uQJ-qK-Egf"/>
-                            <constraint firstItem="mK5-KC-QG4" firstAttribute="leading" secondItem="s1B-Br-ZIg" secondAttribute="leading" constant="50" id="z4J-6J-pi9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="s1B-Br-ZIg"/>
                     </view>

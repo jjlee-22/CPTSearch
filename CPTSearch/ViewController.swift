@@ -35,20 +35,7 @@ class ViewController: UIViewController {
                titleLabel.text = shortData[myIndex]
                descriptionLabel.text = longData[myIndex]
         }
-        
-         setBackground()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"blue.jpg")!)
     }
-    
-    func setBackground(){
-        view.addSubview(backgroundImageView)
-        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-        backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-        backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        
-        backgroundImageView.image = UIImage(named: "blue.jpg")
-    }
-    
 }
 
