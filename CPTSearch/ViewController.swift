@@ -29,15 +29,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        // Lindsey was here
-        // Truc is here
-        //setBackground()
+       
         if(CPTCodeData.isEmpty == false){
                CPTCodeLabel.text = CPTCodeData[myIndex]
                titleLabel.text = shortData[myIndex]
                descriptionLabel.text = longData[myIndex]
-               }
+        }
+        
+         //setBackground()
     }
     
     func setBackground(){

@@ -20,29 +20,39 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGP-CK-aQ4">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGP-CK-aQ4">
                                     <rect key="frame" x="154" y="8" width="106" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" systemColor="quaternaryLabelColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" title="Sort"/>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1c6-np-14O">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1c6-np-14O">
                                     <rect key="frame" x="268" y="8" width="106" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" systemColor="quaternaryLabelColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" title="Search"/>
                                     <connections>
                                         <segue destination="kdA-hQ-RiU" kind="show" id="ncs-xP-CTN"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72X-QN-qGc">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72X-QN-qGc">
                                     <rect key="frame" x="40" y="8" width="106" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" systemColor="quaternaryLabelColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="106" id="PSn-cL-IVm"/>
+                                    </constraints>
                                     <state key="normal" title="Filter"/>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="1c6-np-14O" firstAttribute="leading" secondItem="sGP-CK-aQ4" secondAttribute="trailing" constant="8" id="037-R4-KxK"/>
+                                <constraint firstItem="sGP-CK-aQ4" firstAttribute="centerX" secondItem="jY4-aG-DwY" secondAttribute="centerX" id="1aW-Hc-TF3"/>
+                                <constraint firstItem="sGP-CK-aQ4" firstAttribute="baseline" secondItem="1c6-np-14O" secondAttribute="baseline" id="3Tg-wE-vLV"/>
+                                <constraint firstItem="72X-QN-qGc" firstAttribute="top" secondItem="jY4-aG-DwY" secondAttribute="topMargin" id="7Rn-K3-lvL"/>
+                                <constraint firstItem="sGP-CK-aQ4" firstAttribute="leading" secondItem="72X-QN-qGc" secondAttribute="trailing" constant="8" id="b1t-BU-3xg"/>
+                                <constraint firstItem="72X-QN-qGc" firstAttribute="leading" secondItem="7Fe-eg-taR" secondAttribute="leading" constant="40" id="cfA-x9-6C0"/>
+                                <constraint firstItem="7Fe-eg-taR" firstAttribute="trailing" secondItem="1c6-np-14O" secondAttribute="trailing" constant="40" id="hcW-vo-KBo"/>
+                                <constraint firstItem="72X-QN-qGc" firstAttribute="baseline" secondItem="sGP-CK-aQ4" secondAttribute="baseline" id="kYf-BZ-U1M"/>
+                            </constraints>
                             <viewLayoutGuide key="safeArea" id="7Fe-eg-taR"/>
                         </view>
                         <prototypes>
@@ -53,21 +63,29 @@
                                     <rect key="frame" x="0.0" y="0.0" width="382.5" height="86"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9Z-0p-zPA" userLabel="CPTCode">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9Z-0p-zPA" userLabel="CPTCode">
                                             <rect key="frame" x="10" y="0.0" width="363" height="31"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrX-aB-YK9" userLabel="CPTShort">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrX-aB-YK9" userLabel="CPTShort">
                                             <rect key="frame" x="10" y="28" width="363" height="47"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Z9Z-0p-zPA" firstAttribute="leading" secondItem="zrX-aB-YK9" secondAttribute="leading" id="Fir-gp-PTf"/>
+                                        <constraint firstItem="zrX-aB-YK9" firstAttribute="bottom" secondItem="enq-7J-cXL" secondAttribute="bottomMargin" id="JXG-uc-Iou"/>
+                                        <constraint firstItem="Z9Z-0p-zPA" firstAttribute="trailing" secondItem="zrX-aB-YK9" secondAttribute="trailing" id="QPH-A0-YbU"/>
+                                        <constraint firstItem="Z9Z-0p-zPA" firstAttribute="top" secondItem="enq-7J-cXL" secondAttribute="topMargin" constant="-11" id="USm-Rv-ar9"/>
+                                        <constraint firstItem="Z9Z-0p-zPA" firstAttribute="leading" secondItem="enq-7J-cXL" secondAttribute="leadingMargin" constant="-10" id="b2G-4n-jAr"/>
+                                        <constraint firstItem="zrX-aB-YK9" firstAttribute="top" secondItem="enq-7J-cXL" secondAttribute="topMargin" constant="17" id="emP-Ki-xWp"/>
+                                        <constraint firstItem="Z9Z-0p-zPA" firstAttribute="centerX" secondItem="enq-7J-cXL" secondAttribute="centerX" id="fNu-Sk-z1a"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Z9Z-0p-zPA" secondAttribute="bottom" constant="44" id="sHa-3d-4nD"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="CPTCodeLabel" destination="Z9Z-0p-zPA" id="Ant-9i-LNC"/>

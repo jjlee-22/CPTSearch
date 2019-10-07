@@ -8,11 +8,11 @@
 
 import UIKit
 
-var CPTCodeData = [String]() // stores all CPT code
-var shortData = [String]() // stores all CPT short description
-var longData = [String]() // stores all CPT long description
+var CPTCodeData = [String]() // stores all CPT codes
+var shortData = [String]() // stores all CPT short descriptions
+var longData = [String]() // stores all CPT long descriptions
 var myIndex = 0; // tracks index location of each order
-var indexTrackerforLongDescription = 0; // tracks index location of CPT long description
+var indexTrackerforLongdescription = 0; // tracks index location of CPT long description
 var indexTrackerforCPTCode = 0; // tracks index location of CPT code
 
 
@@ -22,7 +22,6 @@ class HeadlineTableViewCell: UITableViewCell {
     @IBOutlet var CPTCodeLabel: UILabel!
     @IBOutlet var CPTShortDescriptionLabel: UILabel!
 }
-
 
 class TableViewController: UITableViewController {
     
@@ -38,12 +37,15 @@ class TableViewController: UITableViewController {
 
             for (_, section) in sections.enumerated() {
                 for item in section {
-                     indexTrackerforLongDescription+=1
-                    if(indexTrackerforLongDescription%3==0){ // adds all CPT longDescription to longData
+                     indexTrackerforLongdescription+=1
+                   
+                    // adds all CPT longDescription to longData
+                    if(indexTrackerforLongdescription%3==0){
                        longData.append(item as! String)
                     }
                     else {
-                        if(indexTrackerforCPTCode%2==0) { // adds all CPTCodes to CPTCodeData
+                        // adds all CPTCodes to CPTCodeData
+                        if(indexTrackerforCPTCode%2==0) {
                          CPTCodeData.append(item as! String)
                         }
                         else { // add all CPT shortDescription to shortData
