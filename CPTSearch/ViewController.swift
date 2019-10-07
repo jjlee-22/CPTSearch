@@ -36,7 +36,7 @@ class ViewController: UIViewController {
                descriptionLabel.text = longData[myIndex]
         }
         
-         //setBackground()
+         setBackground()
     }
     
     func setBackground(){
