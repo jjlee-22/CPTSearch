@@ -147,14 +147,7 @@
                         <viewLayoutGuide key="safeArea" id="s1B-Br-ZIg"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Dashboard" id="FMO-5V-hQz">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="rectangle.grid.2x2.fill" catalog="system" id="XdJ-Cb-qqU" customClass="NavBarButton">
-                            <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="navButtonTapped:" destination="ZCk-3z-qh2" id="Qu4-0X-KKY"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Dashboard" id="FMO-5V-hQz"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulO-cx-qxK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -529,7 +522,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="rectangle.grid.2x2.fill" catalog="system" width="64" height="48"/>
         <image name="square.and.arrow.down.on.square.fill" catalog="system" width="60" height="64"/>
         <image name="unnamed.jpg" width="900" height="900"/>
     </resources>
