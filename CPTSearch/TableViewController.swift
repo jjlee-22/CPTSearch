@@ -8,26 +8,6 @@
 
 import UIKit
 
-
-//Christmas Regular Expression! -Lindsey
-extension String
-{
-    func hashtags() -> [String]
-    {
-        if let regex = try? NSRegularExpression(pattern: "#[a-z0-9]+", options: .caseInsensitive)
-        {
-            let string = self as NSString
-
-            return regex.matches(in: self, options: [], range: NSRange(location: 0, length: string.length)).map {
-                string.substring(with: $0.range).replacingOccurrences(of: "#", with: "").lowercased()
-            }
-        }
-
-        return []
-    }
-}
-
-
 var CPTCodeData = [String]() // stores all CPT codes
 var shortData = [String]() // stores all CPT short descriptions
 var longData = [String]() // stores all CPT long descriptions
@@ -47,15 +27,6 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //  Testing Christmas Regular Expressions -Lindsey
-        let text = "I made this wonderful pic last #chRistmas... #instagram #nofilter #snow #fun"
-        let hashtags = text.hashtags()
-        print("Returning results of Christmas Regular Expression:")
-        print(hashtags)
-        // Output: ["christmas", "instagram", "nofilter", "snow", "fun"]
-        
-        
         
         self.tableView.rowHeight = 80.0
 
