@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		884AE3F2234E78B500E08105 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 884AE3F1234E78B500E08105 /* AppIcon.appiconset */; };
 		888C6D5023453B5500C624BD /* clevelandclinicbackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 888C6D4F23453B5500C624BD /* clevelandclinicbackground.jpg */; };
 		888C6D542345440900C624BD /* Unknown.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 888C6D532345440900C624BD /* Unknown.jpg */; };
 		888C6D562345447000C624BD /* blue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 888C6D552345447000C624BD /* blue.jpg */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		884AE3F1234E78B500E08105 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 		888C6D4F23453B5500C624BD /* clevelandclinicbackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = clevelandclinicbackground.jpg; sourceTree = "<group>"; };
 		888C6D532345440900C624BD /* Unknown.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Unknown.jpg; sourceTree = "<group>"; };
 		888C6D552345447000C624BD /* blue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blue.jpg; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				D413B9EF233020590097CE56 /* CPTSearch */,
 				D413B9EE233020590097CE56 /* Products */,
+				884AE3F1234E78B500E08105 /* AppIcon.appiconset */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +162,7 @@
 				B123FB6A234686850008E215 /* Orders.plist in Resources */,
 				D413B9F82330205C0097CE56 /* Assets.xcassets in Resources */,
 				88F5D602234BD00B006E72E5 /* bluecircle.jpg in Resources */,
+				884AE3F2234E78B500E08105 /* AppIcon.appiconset in Resources */,
 				88F5D604234BDB0F006E72E5 /* unnamed.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
