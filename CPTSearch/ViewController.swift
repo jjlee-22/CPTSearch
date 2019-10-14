@@ -37,7 +37,6 @@ extension String
 
 class ViewController: UIViewController {
     
-    @IBOutlet var navView: UIView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var CPTCodeLabel: UILabel!
@@ -65,10 +64,6 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func navButtonTapped(_ sender: Any) {
-        navView.isHidden = !navView.isHidden
-    }
-    
     // This method only runs after the view loads
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,8 +74,6 @@ class ViewController: UIViewController {
                titleLabel.text = shortData[myIndex]
                descriptionLabel.text = longData[myIndex]
         }
-        
-        //self.view.backgroundColor = UIColor(patternImage: UIImage(named:"unnamed.jpg")!)
         
         //  Will create a regular expression of the string "error" if something other than a String is there
         //currentRegularExpression = regularExpressionSearch//.text ?? "error"
