@@ -34,9 +34,10 @@ extension String
 }
 //  End of Regular Expression Struct
 
+// MARK: - UIViewController
 
 class ViewController: UIViewController {
-    
+    // reference to UI labels
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var CPTCodeLabel: UILabel!
@@ -68,11 +69,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-       
-        if(CPTCodeData.isEmpty == false){
-               CPTCodeLabel.text = CPTCodeData[myIndex]
-               titleLabel.text = shortData[myIndex]
-               descriptionLabel.text = longData[myIndex]
+       // displays data according to boolean status
+        if(CPTCodeData.isEmpty == false && alphabeticalBoolean == true){
+               CPTCodeLabel?.text = CPTCodeData[orderIndex]
+               titleLabel?.text = shortData[orderIndex]
+               descriptionLabel?.text = longData[orderIndex]
+        }
+        if(CPTCodeData.isEmpty == false && alphabeticalBoolean == false) {
+            CPTCodeLabel?.text = sortedCodes[orderIndex].CPTCode
+            titleLabel?.text = sortedCodes[orderIndex].Short
+            descriptionLabel?.text = sortedCodes[orderIndex].Long
         }
         
         //  Will create a regular expression of the string "error" if something other than a String is there
@@ -82,8 +88,8 @@ class ViewController: UIViewController {
         //let text = "I made this wonderful pic last #chRistmas... #instagram #nofilter #snow #fun"
 
         // Output: ["christmas", "instagram", "nofilter", "snow", "fun"]
-        
     }
-    
 }
+
+
 
