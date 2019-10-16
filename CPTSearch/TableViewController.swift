@@ -8,6 +8,9 @@
 
 import UIKit
 
+
+// MARK: - global variables
+
 var CPTCodeData = [String]() // stores all CPT codes
 var shortData = [String]() // stores all CPT short descriptions
 var longData = [String]() // stores all CPT long descriptions
@@ -16,7 +19,6 @@ var CPTDictionary = [String: [String]]() // stores key->value(s) pairs
 var orderIndex = 0 // tracks index location of each order
 var indexTrackerforLongdescription = 0 // tracks index location of CPT long description
 var indexTrackerforCPTCode = 0 // tracks index location of CPT code
-
 var dictionaryIndex = 0 //keeps track of index location of orderList
 var alphabeticalBoolean = true
 
@@ -26,7 +28,7 @@ let orderList = CPTDictionary.map {(CPTCode: $0.key,
                                     Long:  $0.value.dropFirst().first ?? "")}
 
 //sort short description alphabetically in descending order
-let sortedCodes = orderList.sorted(by: { $0.Short < $1.Short })
+let sortedDictionary = orderList.sorted(by: { $0.Short < $1.Short })
 
 // MARK: - UITableViewCell
 
@@ -41,19 +43,22 @@ class HeadlineTableViewCell: UITableViewCell {
 class TableViewController: UITableViewController {
     @IBOutlet var catalogTableview: UITableView!
     
-    
-    //sort catalog short description alphabetically
-    @IBAction func sortButton(_ sender: Any) {
-        alphabeticalBoolean = !alphabeticalBoolean
-        catalogTableview.reloadData()
-    }
+     
+     //sort catalog short description alphabetically
+     @IBAction func sortButton(_ sender: Any) {
+         alphabeticalBoolean = !alphabeticalBoolean
+         catalogTableview.reloadData()
+     }
     
 // loads content of catalog page
     override func viewDidLoad() {
         super.viewDidLoad()
         // cuztomize row height of table
         catalogTableview.rowHeight = 80.0
-        
+        loadData()
+    }
+    
+    func loadData() {
         // obtains Orders.plist
         let url = Bundle.main.url(forResource:"Orders", withExtension: "plist")!
         
@@ -90,8 +95,8 @@ class TableViewController: UITableViewController {
         } catch {
             print("Error grabbing data from properly list: ", error)
         }
-        
     }
+    
     
 // MARK: - Table view data source
     
@@ -119,8 +124,8 @@ class TableViewController: UITableViewController {
             // once sort button is clicked, catalog page displays CPT short description
             // alphabetically
         else  {
-            cell.CPTCodeLabel.text = "CPT Code: \(sortedCodes[indexPath.row].CPTCode)"
-            cell.CPTShortDescriptionLabel.text = sortedCodes[indexPath.row].Short
+            cell.CPTCodeLabel.text = "CPT Code: \(sortedDictionary[indexPath.row].CPTCode)"
+            cell.CPTShortDescriptionLabel.text = sortedDictionary[indexPath.row].Short
             return cell
         }
     }

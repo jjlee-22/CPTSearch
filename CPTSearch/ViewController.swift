@@ -34,6 +34,7 @@ extension String
 }
 //  End of Regular Expression Struct
 
+
 // MARK: - UIViewController
 
 class ViewController: UIViewController {
@@ -43,27 +44,30 @@ class ViewController: UIViewController {
     @IBOutlet var CPTCodeLabel: UILabel!
 
     //let backgroundImageView = UIImageView()
-    
-
     @IBOutlet weak var regularExpressionSearch: UISearchBar!
-    var currentRegularExpression = String("")
+      var currentRegularExpression = String("")
 
-    
-    //  I added a button -Lindsey
-    @IBAction func searchButton(_ sender: UIButton)
-    {
-        //  Gets ready to set the regular expression equal to the search bar text
-        currentRegularExpression = regularExpressionSearch.text ?? "error"
+      
+      //  I added a button -Lindsey
+      @IBAction func searchButton(_ sender: UIButton)
+      {
+        let sendValue = TableViewController();
+        sendValue.loadData();
         
-        //  Checks this string to see if the regular expression is contained in it or not. This string will become the entire CptLongDescriptions column of medical procdures.
-        let text = "HiHelloHi"
-        //  Calls the struct (a class-like thing) to create the regular expression
-        let hashtags = text.hashtags(currentRegularExpression: currentRegularExpression);
-        print("Returning results of Christmas Regular Expression:")
-        //  If the text is contained in the regular expression, print it. If not, empty string.
-        print(hashtags)
-    }
-    
+          //  Gets ready to set the regular expression equal to the search bar text
+          currentRegularExpression = regularExpressionSearch.text ?? "error"
+          var test = ""
+          //  Checks this string to see if the regular expression is contained in it or not. This string will become the entire CptLongDescriptions column of medical procdures.
+        for index in shortData {
+            
+            test = index
+            let hashtags = test.hashtags(currentRegularExpression: currentRegularExpression);
+             
+            print(hashtags)
+        }
+          //  Calls the struct (a class-like thing) to create the regular expression
+          
+      }
     
     // This method only runs after the view loads
     override func viewDidLoad() {
@@ -76,18 +80,10 @@ class ViewController: UIViewController {
                descriptionLabel?.text = longData[orderIndex]
         }
         if(CPTCodeData.isEmpty == false && alphabeticalBoolean == false) {
-            CPTCodeLabel?.text = sortedCodes[orderIndex].CPTCode
-            titleLabel?.text = sortedCodes[orderIndex].Short
-            descriptionLabel?.text = sortedCodes[orderIndex].Long
+            CPTCodeLabel?.text = sortedDictionary[orderIndex].CPTCode
+            titleLabel?.text = sortedDictionary[orderIndex].Short
+            descriptionLabel?.text = sortedDictionary[orderIndex].Long
         }
-        
-        //  Will create a regular expression of the string "error" if something other than a String is there
-        //currentRegularExpression = regularExpressionSearch//.text ?? "error"
-        
-        //  Testing Christmas Regular Expressions -Lindsey
-        //let text = "I made this wonderful pic last #chRistmas... #instagram #nofilter #snow #fun"
-
-        // Output: ["christmas", "instagram", "nofilter", "snow", "fun"]
     }
 }
 
