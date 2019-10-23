@@ -23,7 +23,7 @@ var dictionaryIndex = 0 //keeps track of index location of orderList
 var alphabeticalBoolean = true
 
 // map CPTDictionary to easily obtain each component
-let orderList = CPTDictionary.map {(CPTCode: $0.key,
+var orderList = CPTDictionary.map {(CPTCode: $0.key,
                                     Short: $0.value.first ?? "",
                                     Long:  $0.value.dropFirst().first ?? "")}
 
@@ -43,6 +43,8 @@ class HeadlineTableViewCell: UITableViewCell {
 class TableViewController: UITableViewController {
     @IBOutlet var catalogTableview: UITableView!
     
+    @IBOutlet var resultLabel: UILabel!
+    
      
      //sort catalog short description alphabetically
      @IBAction func sortButton(_ sender: Any) {
@@ -56,9 +58,18 @@ class TableViewController: UITableViewController {
         // cuztomize row height of table
         catalogTableview.rowHeight = 80.0
         loadData()
+        resultLabel.text = "\(dictionaryIndex) results"
     }
     
     func loadData() {
+        CPTCodeData.removeAll()
+        shortData.removeAll()
+        longData.removeAll()
+        orderList.removeAll()
+        indexTrackerforLongdescription = 0
+        indexTrackerforCPTCode = 0
+        dictionaryIndex = 0
+        
         // obtains Orders.plist
         let url = Bundle.main.url(forResource:"Orders", withExtension: "plist")!
         

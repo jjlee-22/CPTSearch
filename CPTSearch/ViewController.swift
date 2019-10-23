@@ -145,11 +145,11 @@ class ViewController: UIViewController {
             return FirstTableArray.count
             }
 
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            //let Cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
-            //Cell.textLabel?.text = FirstTableArray[(indexPath as NSIndexPath).row]
-            //return Cell
-            }
+        /*func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let Cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
+            Cell.textLabel?.text = FirstTableArray[(indexPath as NSIndexPath).row]
+            return Cell
+            }*/
 
         func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             //let indexPath : IndexPath = self.tableView.indexPathForSelectedRow!
