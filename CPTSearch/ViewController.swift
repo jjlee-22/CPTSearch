@@ -99,11 +99,11 @@ class ViewController: UIViewController {
 
         // Second Table Array
 
-            SecondTableArray = [
+            //SecondTableArray = [
                 //SecondTable(SecondTitle: ["Data1", "Data2", "Data3"]),
                 //SecondTable(SecondTitle: ["Data4", "Data5", "Data6"]),
-            ]
-            }
+            //]
+            
 
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
             {
@@ -117,12 +117,13 @@ class ViewController: UIViewController {
             }
 
         func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            let indexPath : IndexPath = self.tableView.indexPathForSelectedRow!
-            let DestViewController = segue.destination as! SecondTableViewController
-            let SecondTableArrayTwo = SecondTableArray[(indexPath as NSIndexPath).row]
-            DestViewController.SecondTableArray = SecondTableArrayTwo.SecondTitle
+            //let indexPath : IndexPath = self.tableView.indexPathForSelectedRow!
+            //let DestViewController = segue.destination as! SecondTableViewController
+            //let SecondTableArrayTwo = SecondTableArray[(indexPath as NSIndexPath).row]
+            //DestViewController.SecondTableArray = SecondTableArrayTwo.SecondTitle
             }
     }
+}
 
 
 
