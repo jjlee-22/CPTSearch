@@ -48,11 +48,11 @@ class ViewController: UIViewController {
 
 
     //let backgroundImageView = UIImageView()
-    @IBOutlet weak var regularExpressionSearch: UISearchBar!
+    @IBOutlet var regularExpressionSearch: UISearchBar!
       var currentRegularExpression = String("")
     
     //  Number of results label, Lindsey
-    @IBOutlet weak var numberOfResultsLabel: UILabel!
+    @IBOutlet var numberOfResultsLabel: UILabel!
     var resultsCounter = Int(0)
     let string1 = "Number of Results: "
     var string2 = ""
@@ -64,14 +64,7 @@ class ViewController: UIViewController {
       //  I added a button -Lindsey
       @IBAction func searchButton(_ sender: UIButton)
       {
-        //  I think this is the error, it is creating a
-        //  NEW TableViewController class each time.
-        //let sendValue = TableViewController();
-        //sendValue.loadData();
-        
-        
-        //  New! Makes sure the search gets reset to null each time instead of adding to old searches!
-        //hashtags = null
+        var shortData = [String]()
         resultsCounter = 0
           //  Gets ready to set the regular expression equal to the search bar text
           currentRegularExpression = regularExpressionSearch.text ?? "error"
