@@ -46,32 +46,67 @@ class ViewController: UIViewController {
     //let backgroundImageView = UIImageView()
     @IBOutlet weak var regularExpressionSearch: UISearchBar!
       var currentRegularExpression = String("")
-
-      
+    
+    //  Number of results label, Lindsey
+    @IBOutlet weak var numberOfResultsLabel: UILabel!
+    var resultsCounter = Int(0)
+    let string1 = "Number of Results: "
+    var string2 = ""
+    
+    //  Possible bugfix? Needs to be like a Singleton
+    let sendValue = TableViewController();
+    //sendValue.loadData();
+    
       //  I added a button -Lindsey
       @IBAction func searchButton(_ sender: UIButton)
       {
-        let sendValue = TableViewController();
-        sendValue.loadData();
+        //  I think this is the error, it is creating a
+        //  NEW TableViewController class each time.
+        //let sendValue = TableViewController();
+        //sendValue.loadData();
         
+        
+        //  New! Makes sure the search gets reset to null each time instead of adding to old searches!
+        //hashtags = null
+        resultsCounter = 0
           //  Gets ready to set the regular expression equal to the search bar text
           currentRegularExpression = regularExpressionSearch.text ?? "error"
           var test = ""
           //  Checks this string to see if the regular expression is contained in it or not. This string will become the entire CptLongDescriptions column of medical procdures.
-        for index in shortData {
+        for index in shortData
+        {
             
             test = index
             let hashtags = test.hashtags(currentRegularExpression: currentRegularExpression);
              
             print(hashtags)
+            for index in hashtags
+            {
+                if (index != "")
+                {
+                    resultsCounter = resultsCounter + 1
+                }
+            }
+            print(resultsCounter)
+
         }
-          //  Calls the struct (a class-like thing) to create the regular expression
+        //numberOfResultsLabel.text =  String(resultsCounter)
+        string2 = String(resultsCounter)
+        numberOfResultsLabel.text = string1 + string2
           
       }
     
     // This method only runs after the view loads
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //  Gets 22 everytime, getting close!
+        //sendValue.loadData();
+        if (CPTCodeData.isEmpty == true)
+        {
+            sendValue.loadData()
+        }
+        
         // Do any additional setup after loading the view.
        // displays data according to boolean status
         if(CPTCodeData.isEmpty == false && alphabeticalBoolean == true){
