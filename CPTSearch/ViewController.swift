@@ -78,16 +78,34 @@ class ViewController: UIViewController {
         resultsCounter = 0
           //  Gets ready to set the regular expression equal to the search bar text
           currentRegularExpression = regularExpressionSearch.text ?? "error"
-
-        //  Checks this string to see if the regular expression is contained in it or not. This string will become the entire CptLongDescriptions column of medical procdures.
+          var test = ""
+         // Checks all of the indexes in the
+        //  shortData PList to see if it contains the
+        //  regular expression or not.
         for index in shortData
         {
-            if((index.range(of: currentRegularExpression, options: .caseInsensitive)) != nil) {
-                //shortData.append(index)
-                print(index)
-                resultsCounter = resultsCounter + 1
+            test = index
+            let hashtags = test.hashtags(currentRegularExpression: currentRegularExpression);
+            //  Goes through the PList and
+            //  either prints "[]" if the regular
+            //  expression was not found, or "["CHEST"]"
+            //  or whatever the regular expression is
+            //  if it was found            print(hashtags)
+            for index in hashtags
+            {
+                //  Only add to the results counter if
+                //  a result was found at that index
+                if (index != "")
+                {
+                    resultsCounter = resultsCounter + 1
+                }
             }
+            print(resultsCounter)
         }
+        //numberOfResultsLabel.text =  String(resultsCounter)
+        //  Concatinating strings in Swift more
+        //  difficult than in Java, can't append and int
+        //  to a string, need to cast first
         string2 = String(resultsCounter)
         numberOfResultsLabel.text = string1 + string2
           
@@ -99,6 +117,8 @@ class ViewController: UIViewController {
         
         //  Gets 22 everytime, getting close!
         //sendValue.loadData();
+        
+        //  Works! 11!
         if (CPTCodeData.isEmpty == true)
         {
             sendValue.loadData()
@@ -137,12 +157,13 @@ class ViewController: UIViewController {
             {
             return FirstTableArray.count
             }
-
-        /*func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let Cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
-            Cell.textLabel?.text = FirstTableArray[(indexPath as NSIndexPath).row]
-            return Cell
-            }*/
+/*
+            func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+                let Cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
+                //Cell.textLabel?.text = FirstTableArray[(indexPath as NSIndexPath).row]
+                return Cell
+                }
+ */
 
         func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             //let indexPath : IndexPath = self.tableView.indexPathForSelectedRow!
