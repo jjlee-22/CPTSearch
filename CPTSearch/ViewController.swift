@@ -43,6 +43,16 @@ class ViewController: UIViewController {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var CPTCodeLabel: UILabel!
     
+    @IBOutlet weak var submit: UIButton!    
+    @IBOutlet weak var attachnotesicon: UIImageView!
+    @IBOutlet weak var attachnotes: UITextField!
+    
+    @IBAction func talk(_ sender: Any) {
+        submit.isHidden = false
+        attachnotes.isHidden = false
+        attachnotesicon.isHidden = false
+    }
+    
     var FirstTableArray = [String]()
     //var SecondTableArray = [SecondTable]()
 
