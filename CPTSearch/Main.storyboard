@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Be-wV-ocg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Be-wV-ocg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -82,11 +82,11 @@
                                 <rect key="frame" x="0.0" y="130" width="414" height="86"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FtI-c6-Vvy" id="enq-7J-cXL">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="86"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="382.5" height="86"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9Z-0p-zPA" userLabel="CPTCode">
-                                            <rect key="frame" x="10" y="0.0" width="363" height="31"/>
+                                            <rect key="frame" x="10" y="0.0" width="362.5" height="31"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -411,15 +411,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="ifZ-R7-lQj">
-                                <rect key="frame" x="80" y="655" width="271" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Dye"/>
-                                    <segment title="No Dye"/>
-                                    <segment title="Unsure"/>
-                                </segments>
-                            </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="wcE-iQ-Yo0">
                                 <rect key="frame" x="73" y="587" width="271" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -428,15 +419,21 @@
                                     <segment title="Without"/>
                                     <segment title="Unsure"/>
                                 </segments>
+                                <connections>
+                                    <action selector="indexChangedContrast:" destination="kdA-hQ-RiU" eventType="valueChanged" id="VlT-OC-U8S"/>
+                                </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="TW7-ZG-aYK">
-                                <rect key="frame" x="80" y="519" width="271" height="32"/>
+                                <rect key="frame" x="72" y="519" width="271" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="CT"/>
                                     <segment title="MRI"/>
                                     <segment title="Unsure"/>
                                 </segments>
+                                <connections>
+                                    <action selector="indexChangedProcedureType:" destination="kdA-hQ-RiU" eventType="valueChanged" id="lc9-qZ-ivN"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7t-eG-eHF">
                                 <rect key="frame" x="139" y="147" width="121" height="30"/>
@@ -487,6 +484,18 @@
                                     <action selector="talk:" destination="kdA-hQ-RiU" eventType="touchUpInside" id="urh-u9-ImW"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="MST-YO-gIr">
+                                <rect key="frame" x="72" y="655" width="271" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Dye"/>
+                                    <segment title="No Dye"/>
+                                    <segment title="Unsure"/>
+                                </segments>
+                                <connections>
+                                    <action selector="indexChangedDye:" destination="kdA-hQ-RiU" eventType="valueChanged" id="olm-BU-kLU"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Q1e-Ii-PMK"/>
@@ -495,7 +504,10 @@
                     <connections>
                         <outlet property="attachnotes" destination="crF-JI-ceL" id="oUt-OI-ibw"/>
                         <outlet property="attachnotesicon" destination="GUz-iQ-AAM" id="sCh-GJ-hWD"/>
+                        <outlet property="contrast" destination="wcE-iQ-Yo0" id="eaB-FQ-NqU"/>
+                        <outlet property="dye" destination="MST-YO-gIr" id="rgJ-Ng-dQz"/>
                         <outlet property="numberOfResultsLabel" destination="lC5-iM-jv6" id="lcj-3a-Na8"/>
+                        <outlet property="procedureType" destination="TW7-ZG-aYK" id="anx-9l-Rdj"/>
                         <outlet property="regularExpressionSearch" destination="GK5-ae-aXb" id="PL6-JF-e24"/>
                         <outlet property="submit" destination="2lR-SZ-jx2" id="x4i-NO-qI3"/>
                     </connections>
@@ -640,6 +652,6 @@
         <image name="unnamed.jpg" width="900" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dYm-dI-Mbc"/>
+        <segue reference="k0B-Ob-LdV"/>
     </inferredMetricsTieBreakers>
 </document>
