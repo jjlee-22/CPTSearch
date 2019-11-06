@@ -102,10 +102,12 @@ class ViewController: UIViewController {
                 procedureSelection = ".*"
             default:
                  break
+            
         }
     }
-    
+
     @IBOutlet weak var contrast: UISegmentedControl!
+    
     @IBAction func indexChangedContrast(_ sender: Any)
     {
         switch contrast.selectedSegmentIndex
@@ -117,10 +119,10 @@ class ViewController: UIViewController {
             case 2:
                 contrastSelection = ".*"
             default:
-                 break
+                break
         }
     }
-    
+
     @IBOutlet weak var dye: UISegmentedControl!
     @IBAction func indexChangedDye(_ sender: Any)
     {
@@ -140,7 +142,6 @@ class ViewController: UIViewController {
             default:
                  break
         }
-        
     }
     
       //  I added a button -Lindsey
