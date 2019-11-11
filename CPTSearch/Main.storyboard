@@ -151,8 +151,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDf-So-Vzq">
-                                <rect key="frame" x="50" y="633" width="314" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDf-So-Vzq">
+                                <rect key="frame" x="50" y="567" width="314" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Contact Specialist"/>
                                 <userDefinedRuntimeAttributes>
@@ -165,7 +165,7 @@
                                 </connections>
                             </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mK5-KC-QG4" customClass="CatalogDashboardButton">
-                                <rect key="frame" x="50" y="431" width="314" height="34"/>
+                                <rect key="frame" x="50" y="386" width="314" height="124"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <state key="normal" title="Catalog">
@@ -181,8 +181,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIq-Yb-60T">
-                                <rect key="frame" x="50" y="236" width="314" height="34"/>
+                                <rect key="frame" x="50" y="236" width="314" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Hw1-nt-GEF"/>
+                                </constraints>
                                 <state key="normal" title="Search"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -202,9 +205,11 @@
                         <constraints>
                             <constraint firstItem="j0O-F6-hj6" firstAttribute="centerX" secondItem="zIv-6O-OKK" secondAttribute="centerX" id="1Ng-F9-cre"/>
                             <constraint firstItem="mK5-KC-QG4" firstAttribute="leading" secondItem="MDf-So-Vzq" secondAttribute="leading" id="8hy-Yv-Qn7"/>
+                            <constraint firstItem="mK5-KC-QG4" firstAttribute="top" secondItem="rIq-Yb-60T" secondAttribute="bottom" constant="52" id="Fz1-Fl-M1L"/>
                             <constraint firstItem="rIq-Yb-60T" firstAttribute="top" secondItem="s1B-Br-ZIg" secondAttribute="top" constant="148" id="GvV-mC-K1m"/>
                             <constraint firstItem="rIq-Yb-60T" firstAttribute="centerX" secondItem="j0O-F6-hj6" secondAttribute="centerX" id="HAf-mt-94p"/>
                             <constraint firstItem="rIq-Yb-60T" firstAttribute="leading" secondItem="s1B-Br-ZIg" secondAttribute="leading" constant="50" id="M1Y-2C-48q"/>
+                            <constraint firstItem="mK5-KC-QG4" firstAttribute="top" secondItem="rIq-Yb-60T" secondAttribute="bottom" constant="50" id="O8O-Bh-C9X"/>
                             <constraint firstItem="s1B-Br-ZIg" firstAttribute="bottom" secondItem="j0O-F6-hj6" secondAttribute="bottom" constant="2" id="Zdt-ub-fdE"/>
                             <constraint firstItem="mK5-KC-QG4" firstAttribute="leading" secondItem="rIq-Yb-60T" secondAttribute="leading" id="eka-8L-XGN"/>
                             <constraint firstItem="mK5-KC-QG4" firstAttribute="trailing" secondItem="rIq-Yb-60T" secondAttribute="trailing" id="f4r-Lk-NRp"/>
