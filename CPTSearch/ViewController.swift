@@ -248,36 +248,7 @@ class ViewController: UIViewController {
             self.navigationController?.navigationBar.barStyle = .black
             self.navigationController?.navigationBar.tintColor = UIColor.white
 
-        // First Table Array
-
-            FirstTableArray = ["Example", "Example2"]
-
-        // Second Table Array
-
-            //SecondTableArray = [
-                //SecondTable(SecondTitle: ["Data1", "Data2", "Data3"]),
-                //SecondTable(SecondTitle: ["Data4", "Data5", "Data6"]),
-            //]
-            
-
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-            {
-            return FirstTableArray.count
-            }
-/*
-            func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                let Cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
-                //Cell.textLabel?.text = FirstTableArray[(indexPath as NSIndexPath).row]
-                return Cell
-                }
- */
-
-        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            //let indexPath : IndexPath = self.tableView.indexPathForSelectedRow!
-            //let DestViewController = segue.destination as! SecondTableViewController
-            //let SecondTableArrayTwo = SecondTableArray[(indexPath as NSIndexPath).row]
-            //DestViewController.SecondTableArray = SecondTableArrayTwo.SecondTitle
-            }
+        
     }
 }
 
