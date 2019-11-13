@@ -20,7 +20,6 @@
 		D413B9F1233020590097CE56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D413B9F0233020590097CE56 /* AppDelegate.swift */; };
 		D413B9F82330205C0097CE56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D413B9F72330205C0097CE56 /* Assets.xcassets */; };
 		D413B9FB2330205C0097CE56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D413B9F92330205C0097CE56 /* LaunchScreen.storyboard */; };
-		D46B0249237A01F50015D44E /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46B0248237A01F50015D44E /* CatalogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		D413B9F72330205C0097CE56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D413B9FA2330205C0097CE56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D413B9FC2330205C0097CE56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D46B0248237A01F50015D44E /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +88,6 @@
 				3F1E59CA237CA2DB000CAA2A /* Main.storyboard */,
 				B1B31CBE2360E8CB00008374 /* ViewController.swift */,
 				B123FB672346867F0008E215 /* TableViewController.swift */,
-				D46B0248237A01F50015D44E /* CatalogViewController.swift */,
 				D413B9F72330205C0097CE56 /* Assets.xcassets */,
 				D413B9F92330205C0097CE56 /* LaunchScreen.storyboard */,
 				B123FB69234686850008E215 /* Orders.plist */,
@@ -177,7 +174,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D46B0249237A01F50015D44E /* CatalogViewController.swift in Sources */,
 				B123FB682346867F0008E215 /* TableViewController.swift in Sources */,
 				B1B31CBF2360E8CB00008374 /* ViewController.swift in Sources */,
 				D413B9F1233020590097CE56 /* AppDelegate.swift in Sources */,

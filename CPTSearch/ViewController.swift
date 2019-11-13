@@ -45,10 +45,31 @@ extension String
 }
 //  End of Regular Expression Struct
 
+// MARK: - UITableViewCell
 
+// customized row in UITableView: includes 2 labels
+class TableViewCell: UITableViewCell {
+
+    
+}
 // MARK: - UIViewController
 
-class ViewController: UIViewController {
+class ViewController: UIViewController
+{
+    var CPTCodeData = [String]() // stores all CPT codes
+    var shortData = [String]() // stores all CPT short descriptions
+    var longData = [String]() // stores all CPT long descriptions
+    var CPTDictionary = [String: [String]]() // stores key->value(s) pairs
+
+    var orderIndex = 0 // tracks index location of each order
+    var indexTrackerforLongdescription = 0 // tracks index location of CPT long description
+    var indexTrackerforCPTCode = 0 // tracks index location of CPT code
+    var dictionaryIndex = 0 //keeps track of index location of orderList
+    var alphabeticalBoolean = true
+    
+    @IBOutlet var theTable: UITableView!
+    
+    
     // reference to UI labels
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
@@ -215,8 +236,111 @@ class ViewController: UIViewController {
         print()
         print()
 
-          
-      }
+            func loadData() {
+            CPTCodeData.removeAll()
+            shortData.removeAll()
+            longData.removeAll()
+            indexTrackerforLongdescription = 0
+            indexTrackerforCPTCode = 0
+            dictionaryIndex = 0
+            
+            // obtains Orders.plist
+            let url = Bundle.main.url(forResource:"Orders", withExtension: "plist")!
+            
+            // extract plist info into arrays
+            do {
+                let data = try Data(contentsOf: url)
+                let sections = try PropertyListSerialization.propertyList(from: data, format: nil) as! [[Any]]
+                
+                // loop through each subarray of plist
+                // _ defines unnamed parameter, did not need to keep track of index of each subarray
+                for (_, section) in sections.enumerated() {
+                    // obtains all components(CPTCode, short description, and long description of a subarray
+                    for item in section {
+                        indexTrackerforLongdescription+=1
+                        // adds all CPT longDescription to longData
+                        if(indexTrackerforLongdescription%3==0){
+                            longData.append(item as! String)
+                        }
+                        else {
+                            // adds all CPTCodes to CPTCodeData
+                            if(indexTrackerforCPTCode%2==0) {
+                                CPTCodeData.append(item as! String)
+                            }
+                            else { // add all CPT shortDescription to shortData
+                                shortData.append(item as! String)
+                            }
+                            indexTrackerforCPTCode+=1
+                        }
+                    }
+                    // create dictionary: CPTCodeData (key) --> shortData, longData (values)
+                    CPTDictionary[CPTCodeData[dictionaryIndex]] = [shortData[dictionaryIndex], longData[dictionaryIndex]]
+                    dictionaryIndex+=1
+                }
+            } catch {
+                print("Error grabbing data from properly list: ", error)
+            }
+        }
+
+        
+        //  Now starting Truc's table stuff but here:
+        theTable.rowHeight = 80.0
+        loadData()
+        //resultLabel.text = "\(dictionaryIndex) results"
+            
+        func numberOfSections(in tableView: UITableView) -> Int {
+             // #warning Incomplete implementation, return the number of sections
+             return 1
+         }
+        
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+             // #warning Incomplete implementation, return the number of rows
+             if(MRIFilterBoolean == true) {
+                 return filterCount
+             }
+             if(CTFilterBoolean == true) {
+                 return filterCount
+             }
+             else {
+             return CPTCodeData.count
+             }
+         }
+         
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+             //use cell format of customized UITableViewCell
+             let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! HeadlineTableViewCell
+             
+             // Configure the cell...
+             if (MRIFilterBoolean == true && CTFilterBoolean == false) {
+                 cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
+                 cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
+                 return cell
+             }
+             if(CTFilterBoolean == true && MRIFilterBoolean == false) {
+                 cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
+                 cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
+                 return cell
+             }
+             
+             //catalog page displays CPT Code in ascending order
+             if alphabeticalBoolean && MRIFilterBoolean == false {
+                 cell.CPTCodeLabel.text = "CPT Code: \(CPTCodeData[indexPath.row])"
+                 cell.CPTShortDescriptionLabel.text = shortData[indexPath.row]
+                 return cell
+             }
+                 // once sort button is clicked, catalog page displays CPT short description
+                 // alphabetically
+             else  {
+                 cell.CPTCodeLabel.text = "CPT Code: \(sortedDictionary[indexPath.row].CPTCode)"
+                 cell.CPTShortDescriptionLabel.text = sortedDictionary[indexPath.row].Short
+                 return cell
+             }
+         }
+        
+    }
+    
+    
+    
     
     // This method only runs after the view loads
     override func viewDidLoad() {
