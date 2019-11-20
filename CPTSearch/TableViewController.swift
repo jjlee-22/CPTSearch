@@ -43,6 +43,7 @@ var filterCount = 0
 // filter booleans
 var MRIFilterBoolean = false
 var CTFilterBoolean = false
+var Headboolean = false
 
 // MARK: - UITableViewCell
 
@@ -63,6 +64,12 @@ class TableViewController: UITableViewController {
     @IBOutlet var filterView: UIView!
     @IBOutlet var sortButton: UIButton!
 
+    @IBAction func HeadButton(_ sender: Any) {
+        Headboolean = true
+        filterData(keyword: "HEAD")
+        filterCount = filterOrder.count
+        displayResults(NumberOfRows: filterCount)
+    }
     //sort catalog short description alphabetically
      @IBAction func sortButton(_ sender: Any) {
         procedureBoolean(MRI: false, CT: false)
@@ -190,6 +197,9 @@ class TableViewController: UITableViewController {
    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if(Headboolean == true){
+            return filterCount
+        }
         if(MRIFilterBoolean == true) {
             return filterCount
         }
@@ -204,7 +214,12 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //use cell format of customized UITableViewCell
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! HeadlineTableViewCell
-        
+       
+        if (Headboolean == true) {
+            cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
+            cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
+            return cell
+        }
         // Configure the cell...
         if (MRIFilterBoolean == true && CTFilterBoolean == false) {
             cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"

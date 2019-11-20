@@ -8,6 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		3F1E59CB237CA2DB000CAA2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1E59CA237CA2DB000CAA2A /* Main.storyboard */; };
+		883BC5AA2385E01200558F2D /* rightthingh.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC59B2385E01100558F2D /* rightthingh.png */; };
+		883BC5AB2385E01200558F2D /* rightshoulder.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC59C2385E01100558F2D /* rightshoulder.png */; };
+		883BC5AC2385E01200558F2D /* right hand.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC59D2385E01100558F2D /* right hand.png */; };
+		883BC5AD2385E01200558F2D /* stomach.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC59E2385E01100558F2D /* stomach.png */; };
+		883BC5AE2385E01200558F2D /* rightfoot.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC59F2385E01100558F2D /* rightfoot.png */; };
+		883BC5AF2385E01200558F2D /* rightcalf.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC5A02385E01100558F2D /* rightcalf.png */; };
+		883BC5B02385E01200558F2D /* left shoulder.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC5A12385E01100558F2D /* left shoulder.png */; };
+		883BC5B12385E01200558F2D /* head.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC5A22385E01100558F2D /* head.png */; };
+		883BC5B22385E01200558F2D /* leftfoot.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC5A32385E01100558F2D /* leftfoot.png */; };
+		883BC5B32385E01200558F2D /* chest.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC5A42385E01100558F2D /* chest.png */; };
+		883BC5B42385E01200558F2D /* leftforearm.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC5A52385E01100558F2D /* leftforearm.png */; };
+		883BC5B52385E01200558F2D /* leftthigh.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC5A62385E01100558F2D /* leftthigh.png */; };
+		883BC5B62385E01200558F2D /* lefthand.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC5A72385E01200558F2D /* lefthand.png */; };
+		883BC5B72385E01200558F2D /* rightforearm.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC5A82385E01200558F2D /* rightforearm.png */; };
+		883BC5B82385E01200558F2D /* leftcalf.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC5A92385E01200558F2D /* leftcalf.png */; };
 		884AE3F2234E78B500E08105 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 884AE3F1234E78B500E08105 /* AppIcon.appiconset */; };
 		888C6D5023453B5500C624BD /* clevelandclinicbackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 888C6D4F23453B5500C624BD /* clevelandclinicbackground.jpg */; };
 		888C6D542345440900C624BD /* Unknown.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 888C6D532345440900C624BD /* Unknown.jpg */; };
@@ -20,11 +35,25 @@
 		D413B9F1233020590097CE56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D413B9F0233020590097CE56 /* AppDelegate.swift */; };
 		D413B9F82330205C0097CE56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D413B9F72330205C0097CE56 /* Assets.xcassets */; };
 		D413B9FB2330205C0097CE56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D413B9F92330205C0097CE56 /* LaunchScreen.storyboard */; };
-		D46B0249237A01F50015D44E /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46B0248237A01F50015D44E /* CatalogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3F1E59CA237CA2DB000CAA2A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		883BC59B2385E01100558F2D /* rightthingh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightthingh.png; sourceTree = "<group>"; };
+		883BC59C2385E01100558F2D /* rightshoulder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightshoulder.png; sourceTree = "<group>"; };
+		883BC59D2385E01100558F2D /* right hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right hand.png"; sourceTree = "<group>"; };
+		883BC59E2385E01100558F2D /* stomach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stomach.png; sourceTree = "<group>"; };
+		883BC59F2385E01100558F2D /* rightfoot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightfoot.png; sourceTree = "<group>"; };
+		883BC5A02385E01100558F2D /* rightcalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightcalf.png; sourceTree = "<group>"; };
+		883BC5A12385E01100558F2D /* left shoulder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left shoulder.png"; sourceTree = "<group>"; };
+		883BC5A22385E01100558F2D /* head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head.png; sourceTree = "<group>"; };
+		883BC5A32385E01100558F2D /* leftfoot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftfoot.png; sourceTree = "<group>"; };
+		883BC5A42385E01100558F2D /* chest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chest.png; sourceTree = "<group>"; };
+		883BC5A52385E01100558F2D /* leftforearm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftforearm.png; sourceTree = "<group>"; };
+		883BC5A62385E01100558F2D /* leftthigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftthigh.png; sourceTree = "<group>"; };
+		883BC5A72385E01200558F2D /* lefthand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lefthand.png; sourceTree = "<group>"; };
+		883BC5A82385E01200558F2D /* rightforearm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightforearm.png; sourceTree = "<group>"; };
+		883BC5A92385E01200558F2D /* leftcalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftcalf.png; sourceTree = "<group>"; };
 		884AE3F1234E78B500E08105 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 		888C6D4F23453B5500C624BD /* clevelandclinicbackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = clevelandclinicbackground.jpg; sourceTree = "<group>"; };
 		888C6D532345440900C624BD /* Unknown.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Unknown.jpg; sourceTree = "<group>"; };
@@ -39,7 +68,6 @@
 		D413B9F72330205C0097CE56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D413B9FA2330205C0097CE56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D413B9FC2330205C0097CE56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D46B0248237A01F50015D44E /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +85,21 @@
 			isa = PBXGroup;
 			children = (
 				888C6D532345440900C624BD /* Unknown.jpg */,
+				883BC5A42385E01100558F2D /* chest.png */,
+				883BC5A22385E01100558F2D /* head.png */,
+				883BC5A12385E01100558F2D /* left shoulder.png */,
+				883BC5A92385E01200558F2D /* leftcalf.png */,
+				883BC5A32385E01100558F2D /* leftfoot.png */,
+				883BC5A52385E01100558F2D /* leftforearm.png */,
+				883BC5A72385E01200558F2D /* lefthand.png */,
+				883BC5A62385E01100558F2D /* leftthigh.png */,
+				883BC59D2385E01100558F2D /* right hand.png */,
+				883BC5A02385E01100558F2D /* rightcalf.png */,
+				883BC59F2385E01100558F2D /* rightfoot.png */,
+				883BC5A82385E01200558F2D /* rightforearm.png */,
+				883BC59C2385E01100558F2D /* rightshoulder.png */,
+				883BC59B2385E01100558F2D /* rightthingh.png */,
+				883BC59E2385E01100558F2D /* stomach.png */,
 				88F5D603234BDB0F006E72E5 /* unnamed.jpg */,
 				88F5D601234BD00B006E72E5 /* bluecircle.jpg */,
 				888C6D552345447000C624BD /* blue.jpg */,
@@ -90,7 +133,6 @@
 				3F1E59CA237CA2DB000CAA2A /* Main.storyboard */,
 				B1B31CBE2360E8CB00008374 /* ViewController.swift */,
 				B123FB672346867F0008E215 /* TableViewController.swift */,
-				D46B0248237A01F50015D44E /* CatalogViewController.swift */,
 				D413B9F72330205C0097CE56 /* Assets.xcassets */,
 				D413B9F92330205C0097CE56 /* LaunchScreen.storyboard */,
 				B123FB69234686850008E215 /* Orders.plist */,
@@ -158,15 +200,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				888C6D5023453B5500C624BD /* clevelandclinicbackground.jpg in Resources */,
+				883BC5AC2385E01200558F2D /* right hand.png in Resources */,
 				3F1E59CB237CA2DB000CAA2A /* Main.storyboard in Resources */,
+				883BC5B32385E01200558F2D /* chest.png in Resources */,
 				888C6D562345447000C624BD /* blue.jpg in Resources */,
+				883BC5B02385E01200558F2D /* left shoulder.png in Resources */,
+				883BC5AF2385E01200558F2D /* rightcalf.png in Resources */,
 				888C6D542345440900C624BD /* Unknown.jpg in Resources */,
+				883BC5B62385E01200558F2D /* lefthand.png in Resources */,
+				883BC5B22385E01200558F2D /* leftfoot.png in Resources */,
+				883BC5B42385E01200558F2D /* leftforearm.png in Resources */,
 				D413B9FB2330205C0097CE56 /* LaunchScreen.storyboard in Resources */,
 				B123FB6A234686850008E215 /* Orders.plist in Resources */,
+				883BC5B72385E01200558F2D /* rightforearm.png in Resources */,
+				883BC5AD2385E01200558F2D /* stomach.png in Resources */,
+				883BC5B52385E01200558F2D /* leftthigh.png in Resources */,
+				883BC5AA2385E01200558F2D /* rightthingh.png in Resources */,
+				883BC5B12385E01200558F2D /* head.png in Resources */,
 				D413B9F82330205C0097CE56 /* Assets.xcassets in Resources */,
+				883BC5B82385E01200558F2D /* leftcalf.png in Resources */,
+				883BC5AB2385E01200558F2D /* rightshoulder.png in Resources */,
 				88F5D602234BD00B006E72E5 /* bluecircle.jpg in Resources */,
 				884AE3F2234E78B500E08105 /* AppIcon.appiconset in Resources */,
 				88F5D604234BDB0F006E72E5 /* unnamed.jpg in Resources */,
+				883BC5AE2385E01200558F2D /* rightfoot.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +234,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D46B0249237A01F50015D44E /* CatalogViewController.swift in Sources */,
 				B123FB682346867F0008E215 /* TableViewController.swift in Sources */,
 				B1B31CBF2360E8CB00008374 /* ViewController.swift in Sources */,
 				D413B9F1233020590097CE56 /* AppDelegate.swift in Sources */,
