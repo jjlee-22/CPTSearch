@@ -64,11 +64,12 @@ class TableViewController: UITableViewController {
     @IBOutlet var filterView: UIView!
     @IBOutlet var sortButton: UIButton!
 
+
     @IBAction func HeadButton(_ sender: Any) {
         Headboolean = true
-        filterData(keyword: "HEAD")
-        filterCount = filterOrder.count
-        displayResults(NumberOfRows: filterCount)
+               filterData(keyword: "head")
+               filterCount = filterOrder.count
+               displayResults(NumberOfRows: filterCount)
     }
     //sort catalog short description alphabetically
      @IBAction func sortButton(_ sender: Any) {
@@ -180,14 +181,6 @@ class TableViewController: UITableViewController {
         }
     }
     
-    func writePlistFile(withData data: NSDictionary, atPath path: String) -> Bool {
-        guard FileManager.default.fileExists(atPath: path) else {
-            return false
-        }
-
-        return data.write(toFile: path, atomically: false)
-    }
-    
 // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -220,18 +213,14 @@ class TableViewController: UITableViewController {
             cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
             return cell
         }
-        // Configure the cell...
-        if (MRIFilterBoolean == true && CTFilterBoolean == false) {
-            cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
-            cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
-            return cell
-        }
-        if(CTFilterBoolean == true && MRIFilterBoolean == false) {
-            cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
-            cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
-            return cell
-        }
         
+        // Configure the cell...
+        if (MRIFilterBoolean == true && CTFilterBoolean == false || CTFilterBoolean == true && MRIFilterBoolean == false) {
+            cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
+            cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
+            return cell
+        }
+       
         //catalog page displays CPT Code in ascending order
         if alphabeticalBoolean && MRIFilterBoolean == false {
             cell.CPTCodeLabel.text = "CPT Code: \(CPTCodeData[indexPath.row])"
