@@ -423,6 +423,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             titleLabel?.text = sortedDictionary[orderIndex].Short
             descriptionLabel?.text = sortedDictionary[orderIndex].Long
         }
+        
+        if(MRIFilterBoolean == true || CTFilterBoolean == true) {
+            CPTCodeLabel?.text = filterOrder[orderIndex].CPTCode
+            titleLabel?.text = filterOrder[orderIndex].Short
+            descriptionLabel?.text = filterOrder[orderIndex].Long
+        }
+
 
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barStyle = .black
