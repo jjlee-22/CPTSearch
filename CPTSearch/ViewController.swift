@@ -45,17 +45,86 @@ extension String
 }
 //  End of Regular Expression Struct
 
-// MARK: - UITableViewCell
-
-// customized row in UITableView: includes 2 labels
-class TableViewCell: UITableViewCell {
-
+//  PUT PROTOTYPE CELL CLASS HERE!!
+/*class CellClass: UITableViewCell
+{
     
-}
+}*/
 // MARK: - UIViewController
 
-class ViewController: UIViewController
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
+    
+    var proceduresList = [String]()
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        // #warning Incomplete implementation, return the number of rows
+        /*if(MRIFilterBoolean == true) {
+            return filterCount
+        }
+        if(CTFilterBoolean == true) {
+            return filterCount
+        }
+        else {
+        return CPTCodeData.count
+        }*/
+        
+        //proceduresList.removeAll()
+        //  Testing with one cell for now.
+        //proceduresList.append("Working")
+        //proceduresList.append("Working2")
+        //return 1
+        
+        return proceduresList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        //use cell format of customized UITableViewCell
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "theCell", for: indexPath) as! CellClass
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+        //cell.textLabel?.text = "Working"
+        cell.textLabel?.text = proceduresList[indexPath.row]
+        //cell.textLabelTwo?.text = "Working2"
+        // Configure the cell...
+        /*if (MRIFilterBoolean == true && CTFilterBoolean == false) {
+            cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
+            cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
+            return cell
+        }
+        if(CTFilterBoolean == true && MRIFilterBoolean == false) {
+            cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
+            cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
+            return cell
+        }
+            
+        //catalog page displays CPT Code in ascending order
+        if alphabeticalBoolean && MRIFilterBoolean == false {
+            cell.CPTCodeLabel.text = "CPT Code: \(CPTCodeData[indexPath.row])"
+            cell.CPTShortDescriptionLabel.text = shortData[indexPath.row]
+            return cell
+        }
+            // once sort button is clicked, catalog page displays CPT short description
+            // alphabetically
+        else  {
+            cell.CPTCodeLabel.text = "CPT Code: \(sortedDictionary[indexPath.row].CPTCode)"
+            cell.CPTShortDescriptionLabel.text = sortedDictionary[indexPath.row].Short
+            return cell
+         
+        }*/
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        orderIndex = indexPath.row
+        //creates connection to description page
+        performSegue(withIdentifier: "searchToDescription", sender: self)
+    }
+    
     var CPTCodeData = [String]() // stores all CPT codes
     var shortData = [String]() // stores all CPT short descriptions
     var longData = [String]() // stores all CPT long descriptions
@@ -67,7 +136,8 @@ class ViewController: UIViewController
     var dictionaryIndex = 0 //keeps track of index location of orderList
     var alphabeticalBoolean = true
     
-    @IBOutlet var theTable: UITableView!
+
+    @IBOutlet weak var theTable: UITableView!
     
     
     // reference to UI labels
@@ -90,7 +160,8 @@ class ViewController: UIViewController
 
 
     //let backgroundImageView = UIImageView()
-    @IBOutlet var regularExpressionSearch: UISearchBar!
+    
+    @IBOutlet weak var regularExpressionSearch: UISearchBar!
       var currentRegularExpression = String("")
     
     //  Starts as "Unsure", so searches for anything since not specified to like "W/DYE", or whatever
@@ -166,28 +237,26 @@ class ViewController: UIViewController
     }
     
       //  I added a button -Lindsey
-      @IBAction func searchButton(_ sender: UIButton)
-      {
+
+    @IBAction func searchButton(_ sender: UIButton)
+    {
+    loadData()
         
-        print("Beginning of one search:")
-        print()
-        
-        
-        resultsCounter = 0
-        //  Gets ready to set the regular expression equal to the search bar text
-        currentRegularExpression = regularExpressionSearch.text ?? "error"
-        
-        currentRegularExpression = procedureSelection + currentRegularExpression + contrastSelection + dyeSelection
-        //currentRegularExpression = procedureSelection + "([A-Z+] )*" + currentRegularExpression
-        //currentRegularExpression = procedureSelection + " " + "[a-z0-9]*" + currentRegularExpressio
-        
-        
-        
-       
-        var test = ""
+    print("Beginning of one search:")
+    print()
+    
+    
+    resultsCounter = 0
+    //  Gets ready to set the regular expression equal to the search bar text
+    currentRegularExpression = regularExpressionSearch.text ?? "error"
+    
+    currentRegularExpression = procedureSelection + currentRegularExpression + contrastSelection + dyeSelection
+    //currentRegularExpression = procedureSelection + "([A-Z+] )*" + currentRegularExpression
+    //currentRegularExpression = procedureSelection + " " + "[a-z0-9]*" + currentRegularExpressio    var test = ""
          // Checks all of the indexes in the
         //  shortData PList to see if it contains the
         //  regular expression or not.
+        var test = ""
         for index in shortData
         {
             test = index
@@ -231,148 +300,133 @@ class ViewController: UIViewController
         string2 = String(resultsCounter)
         numberOfResultsLabel.text = string1 + string2
         
+        
+        
         print()
         print("End of one search.")
         print()
         print()
-
-            func loadData() {
-            CPTCodeData.removeAll()
-            shortData.removeAll()
-            longData.removeAll()
-            indexTrackerforLongdescription = 0
-            indexTrackerforCPTCode = 0
-            dictionaryIndex = 0
+}
+    func loadData()
+    {
+        CPTCodeData.removeAll()
+        shortData.removeAll()
+        proceduresList.removeAll()
+        longData.removeAll()
+        indexTrackerforLongdescription = 0
+        indexTrackerforCPTCode = 0
+        dictionaryIndex = 0
             
-            // obtains Orders.plist
-            let url = Bundle.main.url(forResource:"Orders", withExtension: "plist")!
+        // obtains Orders.plist
+        let url = Bundle.main.url(forResource:"Orders", withExtension: "plist")!
             
-            // extract plist info into arrays
-            do {
-                let data = try Data(contentsOf: url)
-                let sections = try PropertyListSerialization.propertyList(from: data, format: nil) as! [[Any]]
+        // extract plist info into arrays
+        do
+        {
+            let data = try Data(contentsOf: url)
+            let sections = try PropertyListSerialization.propertyList(from: data, format: nil) as! [[Any]]
                 
-                // loop through each subarray of plist
-                // _ defines unnamed parameter, did not need to keep track of index of each subarray
-                for (_, section) in sections.enumerated() {
-                    // obtains all components(CPTCode, short description, and long description of a subarray
-                    for item in section {
-                        indexTrackerforLongdescription+=1
-                        // adds all CPT longDescription to longData
-                        if(indexTrackerforLongdescription%3==0){
-                            longData.append(item as! String)
-                        }
-                        else {
-                            // adds all CPTCodes to CPTCodeData
-                            if(indexTrackerforCPTCode%2==0) {
-                                CPTCodeData.append(item as! String)
-                            }
-                            else { // add all CPT shortDescription to shortData
-                                shortData.append(item as! String)
-                            }
-                            indexTrackerforCPTCode+=1
-                        }
+            // loop through each subarray of plist
+            // _ defines unnamed parameter, did not need to keep track of index of each subarray
+            for (_, section) in sections.enumerated()
+            {
+                // obtains all components(CPTCode, short description, and long description of a subarray
+                for item in section
+                {
+                    indexTrackerforLongdescription+=1
+                    // adds all CPT longDescription to longData
+                    if(indexTrackerforLongdescription%3==0)
+                    {
+                        longData.append(item as! String)
                     }
-                    // create dictionary: CPTCodeData (key) --> shortData, longData (values)
-                    CPTDictionary[CPTCodeData[dictionaryIndex]] = [shortData[dictionaryIndex], longData[dictionaryIndex]]
-                    dictionaryIndex+=1
+                    else
+                    {
+                        // adds all CPTCodes to CPTCodeData
+                        if(indexTrackerforCPTCode%2==0)
+                        {
+                            CPTCodeData.append(item as! String)
+                            //proceduresList.append(item as! String)
+                        }
+                        else
+                        {
+                            // add all CPT shortDescription to shortData
+                            shortData.append(item as! String)
+                            //proceduresList.append(item as! String)
+                        }
+                        indexTrackerforCPTCode+=1
+                    }
                 }
-            } catch {
-                print("Error grabbing data from properly list: ", error)
+                // create dictionary: CPTCodeData (key) --> shortData, longData (values)
+                //CPTDictionary[CPTCodeData[dictionaryIndex]] = [shortData[dictionaryIndex], longData[dictionaryIndex]]
+                //dictionaryIndex+=1
+                
             }
         }
+        catch
+        {
+            print("Error grabbing data from properly list: ", error)
+        }
+        
+        for i in 1 ..< shortData.count
+        {
+            proceduresList.append(CPTCodeData[i] + shortData[i])
+        }
+        //  Split procedures list into two lists, then go through with a for-loop and combine them into one list and
+        //  display that on table.
+    }
 
         
-        //  Now starting Truc's table stuff but here:
-        theTable.rowHeight = 80.0
-        loadData()
-        //resultLabel.text = "\(dictionaryIndex) results"
+
             
-        func numberOfSections(in tableView: UITableView) -> Int {
+        func numberOfSections(in tableView: UITableView) -> Int
+        {
              // #warning Incomplete implementation, return the number of sections
              return 1
-         }
-        
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-             // #warning Incomplete implementation, return the number of rows
-             if(MRIFilterBoolean == true) {
-                 return filterCount
-             }
-             if(CTFilterBoolean == true) {
-                 return filterCount
-             }
-             else {
-             return CPTCodeData.count
-             }
-         }
-         
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-             //use cell format of customized UITableViewCell
-             let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! HeadlineTableViewCell
-             
-             // Configure the cell...
-             if (MRIFilterBoolean == true && CTFilterBoolean == false) {
-                 cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
-                 cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
-                 return cell
-             }
-             if(CTFilterBoolean == true && MRIFilterBoolean == false) {
-                 cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
-                 cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
-                 return cell
-             }
-             
-             //catalog page displays CPT Code in ascending order
-             if alphabeticalBoolean && MRIFilterBoolean == false {
-                 cell.CPTCodeLabel.text = "CPT Code: \(CPTCodeData[indexPath.row])"
-                 cell.CPTShortDescriptionLabel.text = shortData[indexPath.row]
-                 return cell
-             }
-                 // once sort button is clicked, catalog page displays CPT short description
-                 // alphabetically
-             else  {
-                 cell.CPTCodeLabel.text = "CPT Code: \(sortedDictionary[indexPath.row].CPTCode)"
-                 cell.CPTShortDescriptionLabel.text = sortedDictionary[indexPath.row].Short
-                 return cell
-             }
-         }
-        
-    }
+        }
+
     
     
     
     
     // This method only runs after the view loads
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
+        //
+        
+        //  Now starting Truc's table stuff but here:
+        //theTable.rowHeight = 80.0
+        loadData()
+        
+        //resultLabel.text = "\(dictionaryIndex) results"
         //  Gets 22 everytime, getting close!
         //sendValue.loadData();
         
         //  Works! 11!
-        if (CPTCodeData.isEmpty == true)
+        /*if (CPTCodeData.isEmpty == true)
         {
             sendValue.loadData()
-        }
+        }*/
         
         // Do any additional setup after loading the view.
        // displays data according to boolean status
-        if(CPTCodeData.isEmpty == false && alphabeticalBoolean == true){
+        if(CPTCodeData.isEmpty == false && alphabeticalBoolean == true)
+        {
                CPTCodeLabel?.text = CPTCodeData[orderIndex]
                titleLabel?.text = shortData[orderIndex]
                descriptionLabel?.text = longData[orderIndex]
         }
-        if(CPTCodeData.isEmpty == false && alphabeticalBoolean == false) {
+        if(CPTCodeData.isEmpty == false && alphabeticalBoolean == false)
+        {
             CPTCodeLabel?.text = sortedDictionary[orderIndex].CPTCode
             titleLabel?.text = sortedDictionary[orderIndex].Short
             descriptionLabel?.text = sortedDictionary[orderIndex].Long
         }
 
-            self.navigationController?.navigationBar.isTranslucent = false
-            self.navigationController?.navigationBar.barStyle = .black
-            self.navigationController?.navigationBar.tintColor = UIColor.white
-
-        
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.tintColor = UIColor.white
     }
 }
 
