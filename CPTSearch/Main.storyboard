@@ -240,74 +240,44 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvy-ys-JxN" userLabel="ChestButton">
-                                <rect key="frame" x="165" y="203" width="85" height="115"/>
+                                <rect key="frame" x="165" y="203" width="85" height="224"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="chest.png"/>
+                                <connections>
+                                    <segue destination="2Cu-fc-u1N" kind="show" id="eCj-Gc-hC9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8N-eV-IjW" userLabel="LeftShoulderButton">
-                                <rect key="frame" x="81" y="203" width="76" height="103"/>
+                                <rect key="frame" x="72" y="210" width="85" height="175"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="left shoulder.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wk-k5-J0O" userLabel="LeftCalfButton">
-                                <rect key="frame" x="122" y="554" width="56" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="leftcalf.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6u9-mP-twW" userLabel="RightcalfButton">
-                                <rect key="frame" x="233" y="553" width="56" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="leftcalf.png"/>
+                                <connections>
+                                    <segue destination="2Cu-fc-u1N" kind="show" id="ggi-WI-9eN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTG-5K-Hol" userLabel="LeftFootButton">
-                                <rect key="frame" x="129" y="647" width="49" height="69"/>
+                                <rect key="frame" x="137" y="647" width="49" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="leftfoot.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHO-CD-7yV" userLabel="RightFootButton">
-                                <rect key="frame" x="237" y="646" width="49" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="leftfoot.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwP-5b-jIe" userLabel="LeftForearmButton">
-                                <rect key="frame" x="27" y="300" width="61" height="78"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="leftforearm.png"/>
+                                <connections>
+                                    <segue destination="2Cu-fc-u1N" kind="show" id="e6Y-71-FEV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNZ-0R-MEV" userLabel="LeftHandButton">
-                                <rect key="frame" x="0.0" y="386" width="47" height="46"/>
+                                <rect key="frame" x="44" y="393" width="47" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="lefthand.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yn2-KB-ahX" userLabel="LeftThighButton">
-                                <rect key="frame" x="122" y="432" width="63" height="114"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="leftthigh.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvc-dG-N6B" userLabel="RightThighButton">
-                                <rect key="frame" x="230" y="432" width="63" height="114"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="leftthigh.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feK-Ua-vvx" userLabel="StomachButton">
-                                <rect key="frame" x="165" y="326" width="85" height="115"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="stomach.png"/>
+                                <connections>
+                                    <segue destination="2Cu-fc-u1N" kind="show" id="NPf-EL-wMP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGp-Ck-9D5" userLabel="RightShoulderButton">
-                                <rect key="frame" x="258" y="210" width="68" height="101"/>
+                                <rect key="frame" x="258" y="210" width="83" height="175"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="rightshoulder.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLn-xs-QYd" userLabel="Rightforearmbutton">
-                                <rect key="frame" x="315" y="319" width="57" height="83"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="rightforearm.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1M-sk-WGa" userLabel="RightHandButton">
-                                <rect key="frame" x="353" y="410" width="41" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="right hand.png"/>
+                                <connections>
+                                    <segue destination="2Cu-fc-u1N" kind="show" id="3Vw-Ql-0SW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJy-da-apq" userLabel="HeadButton">
                                 <rect key="frame" x="165" y="99" width="77" height="96"/>
@@ -319,10 +289,42 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="unnamed.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="j0O-F6-hj6">
-                                <rect key="frame" x="0.0" y="88" width="414" height="727"/>
+                                <rect key="frame" x="0.0" y="736" width="414" height="727"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1M-sk-WGa" userLabel="RightHandButton">
+                                <rect key="frame" x="321" y="393" width="41" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="right hand.png"/>
+                                <connections>
+                                    <segue destination="2Cu-fc-u1N" kind="show" id="atI-b6-6xq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hhn-Zl-Tum">
+                                <rect key="frame" x="129" y="420" width="64" height="219"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="LeftLegButton" image="leg.png"/>
+                                <connections>
+                                    <segue destination="2Cu-fc-u1N" kind="show" id="vmF-iT-0Aw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9z-BC-E2d">
+                                <rect key="frame" x="222" y="420" width="64" height="219"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="RigthLegButton" image="leg.png"/>
+                                <connections>
+                                    <segue destination="2Cu-fc-u1N" kind="show" id="kWv-JH-DbW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHO-CD-7yV" userLabel="RightFootButton">
+                                <rect key="frame" x="230" y="646" width="49" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="leftfoot.png"/>
+                                <connections>
+                                    <segue destination="2Cu-fc-u1N" kind="show" id="khH-Ky-2AT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="s1B-Br-ZIg"/>
@@ -703,16 +705,12 @@
         <image name="chest.png" width="49" height="103.68000030517578"/>
         <image name="head.png" width="51.840000152587891" height="72"/>
         <image name="left shoulder.png" width="48" height="82.55999755859375"/>
-        <image name="leftcalf.png" width="27.840000152587891" height="73.919998168945312"/>
         <image name="leftfoot.png" width="29.760000228881836" height="44.639999389648438"/>
-        <image name="leftforearm.png" width="40.799999237060547" height="61.919998168945312"/>
         <image name="lefthand.png" width="36" height="37"/>
-        <image name="leftthigh.png" width="41.759998321533203" height="76.800003051757812"/>
+        <image name="leg.png" width="43.680000305175781" height="217"/>
         <image name="right hand.png" width="34.560001373291016" height="37"/>
-        <image name="rightforearm.png" width="43.680000305175781" height="59.520000457763672"/>
         <image name="rightshoulder.png" width="46.560001373291016" height="82.55999755859375"/>
         <image name="square.and.arrow.down.on.square.fill" catalog="system" width="60" height="64"/>
-        <image name="stomach.png" width="97.919998168945312" height="65.760002136230469"/>
         <image name="unnamed.jpg" width="900" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
