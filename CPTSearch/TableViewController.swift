@@ -133,6 +133,8 @@ class TableViewController: UITableViewController {
         catalogTableview.rowHeight = 80.0
         loadData()
         resultLabel.text = "\(dictionaryIndex) results"
+
+        
     }
     
     func loadData() {
@@ -239,6 +241,13 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         orderIndex = indexPath.row
+        print(orderIndex)
+        //cell.CPTCodeLabel?.text = CPTCodeData[orderIndex]
+        print(CPTCodeData[orderIndex])
+        //titleLabel?.text = shortData[orderIndex]
+        print(shortData[orderIndex])
+        //descriptionLabel?.text = longData[orderIndex]
+        print(longData[orderIndex])
         //creates connection to description page
         performSegue(withIdentifier: "segue", sender: self)
     }

@@ -121,6 +121,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         orderIndex = indexPath.row
+        print(orderIndex)
+        
+        CPTCodeLabel?.text = CPTCodeData[orderIndex]
+        print(CPTCodeData[orderIndex])
+        titleLabel?.text = shortData[orderIndex]
+        print(shortData[orderIndex])
+        descriptionLabel?.text = longData[orderIndex]
+        print(longData[orderIndex])
+        
         //creates connection to description page
         performSegue(withIdentifier: "searchToDescription", sender: self)
     }
@@ -398,7 +407,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //  Now starting Truc's table stuff but here:
         //theTable.rowHeight = 80.0
         loadData()
-        
+        //CPTCodeLabel?.text = CPTCodeData[orderIndex]
+        //titleLabel?.text = shortData[orderIndex]
+        //descriptionLabel?.text = longData[orderIndex]
         //resultLabel.text = "\(dictionaryIndex) results"
         //  Gets 22 everytime, getting close!
         //sendValue.loadData();
@@ -408,29 +419,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         {
             sendValue.loadData()
         }*/
-        
-        // Do any additional setup after loading the view.
-       // displays data according to boolean status
-        if(CPTCodeData.isEmpty == false && alphabeticalBoolean == true)
-        {
-               CPTCodeLabel?.text = CPTCodeData[orderIndex]
-               titleLabel?.text = shortData[orderIndex]
-               descriptionLabel?.text = longData[orderIndex]
-        }
-        if(CPTCodeData.isEmpty == false && alphabeticalBoolean == false)
-        {
-            CPTCodeLabel?.text = sortedDictionary[orderIndex].CPTCode
-            titleLabel?.text = sortedDictionary[orderIndex].Short
-            descriptionLabel?.text = sortedDictionary[orderIndex].Long
-        }
-        
-        if(MRIFilterBoolean == true || CTFilterBoolean == true) {
-            CPTCodeLabel?.text = filterOrder[orderIndex].CPTCode
-            titleLabel?.text = filterOrder[orderIndex].Short
-            descriptionLabel?.text = filterOrder[orderIndex].Long
-        }
 
-
+                        
+         // Do any additional setup after loading the view.
+        // displays data according to boolean status
+         if(CPTCodeData.isEmpty == false && alphabeticalBoolean == true)
+         {
+                CPTCodeLabel?.text = CPTCodeData[orderIndex]
+                titleLabel?.text = shortData[orderIndex]
+                descriptionLabel?.text = longData[orderIndex]
+         }
+         if(CPTCodeData.isEmpty == false && alphabeticalBoolean == false)
+         {
+             CPTCodeLabel?.text = sortedDictionary[orderIndex].CPTCode
+             titleLabel?.text = sortedDictionary[orderIndex].Short
+             descriptionLabel?.text = sortedDictionary[orderIndex].Long
+         }
+         
+         if(MRIFilterBoolean == true || CTFilterBoolean == true) {
+             CPTCodeLabel?.text = filterOrder[orderIndex].CPTCode
+             titleLabel?.text = filterOrder[orderIndex].Short
+             descriptionLabel?.text = filterOrder[orderIndex].Long
+         }
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.tintColor = UIColor.white
