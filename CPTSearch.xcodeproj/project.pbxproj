@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F1E59CB237CA2DB000CAA2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1E59CA237CA2DB000CAA2A /* Main.storyboard */; };
+		882F45C6238C783500088C34 /* leg.png in Resources */ = {isa = PBXBuildFile; fileRef = 882F45C5238C783400088C34 /* leg.png */; };
 		883BC5AA2385E01200558F2D /* rightthingh.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC59B2385E01100558F2D /* rightthingh.png */; };
 		883BC5AB2385E01200558F2D /* rightshoulder.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC59C2385E01100558F2D /* rightshoulder.png */; };
 		883BC5AC2385E01200558F2D /* right hand.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC59D2385E01100558F2D /* right hand.png */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		3F1E59CA237CA2DB000CAA2A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		882F45C5238C783400088C34 /* leg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leg.png; sourceTree = "<group>"; };
 		883BC59B2385E01100558F2D /* rightthingh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightthingh.png; sourceTree = "<group>"; };
 		883BC59C2385E01100558F2D /* rightshoulder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightshoulder.png; sourceTree = "<group>"; };
 		883BC59D2385E01100558F2D /* right hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right hand.png"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				883BC59F2385E01100558F2D /* rightfoot.png */,
 				883BC5A82385E01200558F2D /* rightforearm.png */,
 				883BC59C2385E01100558F2D /* rightshoulder.png */,
+				882F45C5238C783400088C34 /* leg.png */,
 				883BC59B2385E01100558F2D /* rightthingh.png */,
 				883BC59E2385E01100558F2D /* stomach.png */,
 				88F5D603234BDB0F006E72E5 /* unnamed.jpg */,
@@ -213,6 +216,7 @@
 				D413B9FB2330205C0097CE56 /* LaunchScreen.storyboard in Resources */,
 				B123FB6A234686850008E215 /* Orders.plist in Resources */,
 				883BC5B72385E01200558F2D /* rightforearm.png in Resources */,
+				882F45C6238C783500088C34 /* leg.png in Resources */,
 				883BC5AD2385E01200558F2D /* stomach.png in Resources */,
 				883BC5B52385E01200558F2D /* leftthigh.png in Resources */,
 				883BC5AA2385E01200558F2D /* rightthingh.png in Resources */,
