@@ -86,6 +86,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //let cell = tableView.dequeueReusableCell(withIdentifier: "theCell", for: indexPath) as! CellClass
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
         //cell.textLabel?.text = "Working"
+        
+        //  THIS IS WHERE EACH ROW OF THE TABLE GETS CREATED!! WANT IT TO ONLY BE THERE IF PART OF REGEX!!
         cell.textLabel?.text = proceduresList[indexPath.row]
         //cell.textLabelTwo?.text = "Working2"
         // Configure the cell...
@@ -249,11 +251,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBAction func searchButton(_ sender: UIButton)
     {
-    loadData()
+    //loadData()
         
     print("Beginning of one search:")
     print()
-    
+    //  Deletes everything from the table each search.
+    proceduresList = []
     
     resultsCounter = 0
     //  Gets ready to set the regular expression equal to the search bar text
@@ -285,10 +288,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 if (index2 != "")
                 {
                     print(index)
+                    //  Adds it to the table
+                    proceduresList.append(index)
                     resultsCounter = resultsCounter + 1
                 }
             }
         }
+        
         
         /*for index in shortData
         {
@@ -309,7 +315,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         string2 = String(resultsCounter)
         numberOfResultsLabel.text = string1 + string2
         
-        
+        //  Makes the Table totally work! BUT the long description page is totally broken!
+        theTable.reloadData()
         
         print()
         print("End of one search.")
