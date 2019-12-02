@@ -11,7 +11,12 @@ The Main.storyboard with all the XML segments (frontend) contains the following:
 - Search interface
 - Contact specialist interface
 
-The TableViewController.swift and ViewController.swift (backend) portion contains the following:
+#### The TableViewController.swift and ViewController.swift (backend) portion contains the following:
 - Catalog page that displays all the orders from the Orders.plist
 - Orders.plist is an XML format that stored all the medical data
 - Search page and contact specialist page codes
+
+#### The Specialists.swift, SpecialistViewController, SpecialistsTableViewCell, and SpecialistsTableViewController (backend) portion contains the following:
+- View interface for the specialist page
+- Models for the specialist object
+- Displaying specialists on the table view
