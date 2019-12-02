@@ -50,6 +50,10 @@ class SpecialistsTableViewController: UITableViewController {
         
         // Configure cell
         cell.first.text = specialist.firstname
+        cell.last.text = specialist.lastname
+        cell.depart.text = specialist.department
+        cell.email.text = specialist.email
+        cell.phone.text = specialist.phonenumber
         
 
         return cell
@@ -107,7 +111,27 @@ class SpecialistsTableViewController: UITableViewController {
             fatalError("Unable to load specialist")
         }
         
-        specialists += [specialist1]
+        guard let specialist2 = Specialists(firstname: "Shelbi", lastname: "Shearer", department: "Human Resource", email: "ssh@jcu.edu", phonenumber: "216-000-0000") else {
+            fatalError("Unable to load specialist")
+        }
+        
+        guard let specialist3 = Specialists(firstname: "Jonathan", lastname: "Lee", department: "Morale Support Team", email: "jonlee@jcu.edu", phonenumber: "540-123-4512") else {
+            fatalError("Unable to load specialist")
+        }
+        
+        guard let specialist4 = Specialists(firstname: "Jane", lastname: "Doe", department: "IT", email: "janedoe@jcu.edu", phonenumber: "000-000-0000") else {
+            fatalError("Unable to load specialist")
+        }
+        
+        guard let specialist5 = Specialists(firstname: "Dan", lastname: "PamPam", department: "Writing Dept.", email: "pampampam@jcu.edu", phonenumber: "999-666-2222") else {
+            fatalError("Unable to load specialist")
+        }
+        
+        guard let specialist6 = Specialists(firstname: "Copy", lastname: "Paste", department: "Law", email: "copypaste@jcu.edu", phonenumber: "111-111-1111") else {
+            fatalError("Unable to load specialist")
+        }
+        
+        specialists += [specialist1, specialist2, specialist3, specialist4, specialist5, specialist6, specialist6, specialist6, specialist6, specialist6, specialist6, specialist6]
     }
 
 }

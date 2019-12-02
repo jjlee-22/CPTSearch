@@ -11,7 +11,12 @@ import UIKit
 class SpecialistsTableViewCell: UITableViewCell {
     
     //MARK: Properties
+    
     @IBOutlet weak var first: UILabel!
+    @IBOutlet weak var last: UILabel!
+    @IBOutlet weak var depart: UILabel!
+    @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var phone: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
