@@ -65,17 +65,13 @@ class TableViewController: UITableViewController {
     @IBOutlet var sortButton: UIButton!
 
 
-    @IBAction func HeadButton(_ sender: Any) {
-        Headboolean = true
-               filterData(keyword: "head")
-               filterCount = filterOrder.count
-               displayResults(NumberOfRows: filterCount)
-    }
+   
+
     //sort catalog short description alphabetically
      @IBAction func sortButton(_ sender: Any) {
         procedureBoolean(MRI: false, CT: false)
         alphabeticalBoolean = !alphabeticalBoolean
-        displayResults(NumberOfRows: dictionaryIndex)
+        displayResults(NumberOfRows: CPTCodeData.count)
      }
 
     @IBAction func MRButton(_ sender: Any) {
@@ -99,7 +95,7 @@ class TableViewController: UITableViewController {
         sortButton.isHidden = false
         alphabeticalBoolean = true
         procedureBoolean(MRI: false, CT: false)
-        displayResults(NumberOfRows: dictionaryIndex)
+        displayResults(NumberOfRows: CPTCodeData.count)
     }
     
     @IBAction func filterButton(_ sender: Any) {
@@ -132,9 +128,7 @@ class TableViewController: UITableViewController {
         // cuztomize row height of table
         catalogTableview.rowHeight = 80.0
         loadData()
-        resultLabel.text = "\(dictionaryIndex) results"
-
-        
+        resultLabel.text = "\(CPTCodeData.count) results"
     }
     
     func loadData() {
@@ -192,13 +186,7 @@ class TableViewController: UITableViewController {
    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if(Headboolean == true){
-            return filterCount
-        }
-        if(MRIFilterBoolean == true) {
-            return filterCount
-        }
-        if(CTFilterBoolean == true) {
+        if(MRIFilterBoolean == true || CTFilterBoolean == true) {
             return filterCount
         }
         else {
@@ -210,11 +198,6 @@ class TableViewController: UITableViewController {
         //use cell format of customized UITableViewCell
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! HeadlineTableViewCell
        
-        if (Headboolean == true) {
-            cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
-            cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
-            return cell
-        }
         
         // Configure the cell...
         if (MRIFilterBoolean == true && CTFilterBoolean == false || CTFilterBoolean == true && MRIFilterBoolean == false) {
@@ -241,13 +224,6 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         orderIndex = indexPath.row
-        print(orderIndex)
-        //cell.CPTCodeLabel?.text = CPTCodeData[orderIndex]
-        print(CPTCodeData[orderIndex])
-        //titleLabel?.text = shortData[orderIndex]
-        print(shortData[orderIndex])
-        //descriptionLabel?.text = longData[orderIndex]
-        print(longData[orderIndex])
         //creates connection to description page
         performSegue(withIdentifier: "segue", sender: self)
     }
@@ -271,3 +247,4 @@ class TableViewController: UITableViewController {
         }
     }
 }
+

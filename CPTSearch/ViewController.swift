@@ -136,16 +136,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         performSegue(withIdentifier: "searchToDescription", sender: self)
     }
     
-    var CPTCodeData = [String]() // stores all CPT codes
-    var shortData = [String]() // stores all CPT short descriptions
-    var longData = [String]() // stores all CPT long descriptions
-    var CPTDictionary = [String: [String]]() // stores key->value(s) pairs
-
-    var orderIndex = 0 // tracks index location of each order
-    var indexTrackerforLongdescription = 0 // tracks index location of CPT long description
-    var indexTrackerforCPTCode = 0 // tracks index location of CPT code
-    var dictionaryIndex = 0 //keeps track of index location of orderList
-    var alphabeticalBoolean = true
+   
     
 
     @IBOutlet weak var theTable: UITableView!
@@ -430,6 +421,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         
          // Do any additional setup after loading the view.
         // displays data according to boolean status
+        
          if(CPTCodeData.isEmpty == false && alphabeticalBoolean == true)
          {
                 CPTCodeLabel?.text = CPTCodeData[orderIndex]
@@ -442,12 +434,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
              titleLabel?.text = sortedDictionary[orderIndex].Short
              descriptionLabel?.text = sortedDictionary[orderIndex].Long
          }
+        if(MRIFilterBoolean == true || CTFilterBoolean == true) {
+            CPTCodeLabel?.text = filterOrder[orderIndex].CPTCode
+            titleLabel?.text = filterOrder[orderIndex].Short
+            descriptionLabel?.text = filterOrder[orderIndex].Long
+        }
          
-         if(MRIFilterBoolean == true || CTFilterBoolean == true) {
-             CPTCodeLabel?.text = filterOrder[orderIndex].CPTCode
-             titleLabel?.text = filterOrder[orderIndex].Short
-             descriptionLabel?.text = filterOrder[orderIndex].Long
-         }
+         
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.tintColor = UIColor.white
