@@ -36,7 +36,22 @@
 		D413B9F1233020590097CE56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D413B9F0233020590097CE56 /* AppDelegate.swift */; };
 		D413B9F82330205C0097CE56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D413B9F72330205C0097CE56 /* Assets.xcassets */; };
 		D413B9FB2330205C0097CE56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D413B9F92330205C0097CE56 /* LaunchScreen.storyboard */; };
+		D4D51D3F239546C000920374 /* SpecialistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D51D3E239546C000920374 /* SpecialistViewController.swift */; };
+		D4D51D4123954D2100920374 /* Specialists.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D51D4023954D2100920374 /* Specialists.swift */; };
+		D4D51D4C2395524C00920374 /* CPTSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D51D4B2395524C00920374 /* CPTSearchTests.swift */; };
+		D4D51D54239560D500920374 /* SpecialistsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D51D53239560D500920374 /* SpecialistsTableViewCell.swift */; };
+		D4D51D562395656D00920374 /* SpecialistsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D51D552395656D00920374 /* SpecialistsTableViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4D51D4E2395524C00920374 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D413B9E5233020590097CE56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D413B9EC233020590097CE56;
+			remoteInfo = CPTSearch;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3F1E59CA237CA2DB000CAA2A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -70,10 +85,24 @@
 		D413B9F72330205C0097CE56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D413B9FA2330205C0097CE56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D413B9FC2330205C0097CE56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4D51D3E239546C000920374 /* SpecialistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistViewController.swift; sourceTree = "<group>"; };
+		D4D51D4023954D2100920374 /* Specialists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specialists.swift; sourceTree = "<group>"; };
+		D4D51D492395524C00920374 /* CPTSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CPTSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4D51D4B2395524C00920374 /* CPTSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPTSearchTests.swift; sourceTree = "<group>"; };
+		D4D51D4D2395524C00920374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4D51D53239560D500920374 /* SpecialistsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistsTableViewCell.swift; sourceTree = "<group>"; };
+		D4D51D552395656D00920374 /* SpecialistsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D413B9EA233020590097CE56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4D51D462395524C00920374 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				D413B9EF233020590097CE56 /* CPTSearch */,
+				D4D51D4A2395524C00920374 /* CPTSearchTests */,
 				D413B9EE233020590097CE56 /* Products */,
 				884AE3F1234E78B500E08105 /* AppIcon.appiconset */,
 			);
@@ -124,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				D413B9ED233020590097CE56 /* CPTSearch.app */,
+				D4D51D492395524C00920374 /* CPTSearchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,14 +165,27 @@
 				888C6D4E23453B2F00C624BD /* Images */,
 				D413B9F0233020590097CE56 /* AppDelegate.swift */,
 				3F1E59CA237CA2DB000CAA2A /* Main.storyboard */,
+				D4D51D552395656D00920374 /* SpecialistsTableViewController.swift */,
+				D4D51D53239560D500920374 /* SpecialistsTableViewCell.swift */,
+				D4D51D4023954D2100920374 /* Specialists.swift */,
 				B1B31CBE2360E8CB00008374 /* ViewController.swift */,
 				B123FB672346867F0008E215 /* TableViewController.swift */,
+				D4D51D3E239546C000920374 /* SpecialistViewController.swift */,
 				D413B9F72330205C0097CE56 /* Assets.xcassets */,
 				D413B9F92330205C0097CE56 /* LaunchScreen.storyboard */,
 				B123FB69234686850008E215 /* Orders.plist */,
 				D413B9FC2330205C0097CE56 /* Info.plist */,
 			);
 			path = CPTSearch;
+			sourceTree = "<group>";
+		};
+		D4D51D4A2395524C00920374 /* CPTSearchTests */ = {
+			isa = PBXGroup;
+			children = (
+				D4D51D4B2395524C00920374 /* CPTSearchTests.swift */,
+				D4D51D4D2395524C00920374 /* Info.plist */,
+			);
+			path = CPTSearchTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,18 +208,40 @@
 			productReference = D413B9ED233020590097CE56 /* CPTSearch.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D4D51D482395524C00920374 /* CPTSearchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4D51D502395524C00920374 /* Build configuration list for PBXNativeTarget "CPTSearchTests" */;
+			buildPhases = (
+				D4D51D452395524C00920374 /* Sources */,
+				D4D51D462395524C00920374 /* Frameworks */,
+				D4D51D472395524C00920374 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4D51D4F2395524C00920374 /* PBXTargetDependency */,
+			);
+			name = CPTSearchTests;
+			productName = CPTSearchTests;
+			productReference = D4D51D492395524C00920374 /* CPTSearchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D413B9E5233020590097CE56 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1030;
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Cleveland Clinic";
 				TargetAttributes = {
 					D413B9EC233020590097CE56 = {
 						CreatedOnToolsVersion = 10.3;
+					};
+					D4D51D482395524C00920374 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = D413B9EC233020590097CE56;
 					};
 				};
 			};
@@ -193,6 +259,7 @@
 			projectRoot = "";
 			targets = (
 				D413B9EC233020590097CE56 /* CPTSearch */,
+				D4D51D482395524C00920374 /* CPTSearchTests */,
 			);
 		};
 /* End PBXProject section */
@@ -231,6 +298,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D4D51D472395524C00920374 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -239,12 +313,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				B123FB682346867F0008E215 /* TableViewController.swift in Sources */,
+				D4D51D3F239546C000920374 /* SpecialistViewController.swift in Sources */,
 				B1B31CBF2360E8CB00008374 /* ViewController.swift in Sources */,
+				D4D51D4123954D2100920374 /* Specialists.swift in Sources */,
+				D4D51D562395656D00920374 /* SpecialistsTableViewController.swift in Sources */,
+				D4D51D54239560D500920374 /* SpecialistsTableViewCell.swift in Sources */,
 				D413B9F1233020590097CE56 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D4D51D452395524C00920374 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4D51D4C2395524C00920374 /* CPTSearchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4D51D4F2395524C00920374 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D413B9EC233020590097CE56 /* CPTSearch */;
+			targetProxy = D4D51D4E2395524C00920374 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D413B9F92330205C0097CE56 /* LaunchScreen.storyboard */ = {
@@ -380,13 +474,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W8ZC6A55VT;
+				DEVELOPMENT_TEAM = T8Z7X2PTVS;
 				INFOPLIST_FILE = CPTSearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Lindsey.CPT;
+				PRODUCT_BUNDLE_IDENTIFIER = Jon.CPT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -400,17 +494,59 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W8ZC6A55VT;
+				DEVELOPMENT_TEAM = T8Z7X2PTVS;
 				INFOPLIST_FILE = CPTSearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Lindsey.CPT;
+				PRODUCT_BUNDLE_IDENTIFIER = Jon.CPT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D4D51D512395524C00920374 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T8Z7X2PTVS;
+				INFOPLIST_FILE = CPTSearchTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.CC.CPTSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CPTSearch.app/CPTSearch";
+			};
+			name = Debug;
+		};
+		D4D51D522395524C00920374 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T8Z7X2PTVS;
+				INFOPLIST_FILE = CPTSearchTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.CC.CPTSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CPTSearch.app/CPTSearch";
 			};
 			name = Release;
 		};
@@ -431,6 +567,15 @@
 			buildConfigurations = (
 				D413BA002330205C0097CE56 /* Debug */,
 				D413BA012330205C0097CE56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4D51D502395524C00920374 /* Build configuration list for PBXNativeTarget "CPTSearchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4D51D512395524C00920374 /* Debug */,
+				D4D51D522395524C00920374 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
