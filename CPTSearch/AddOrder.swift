@@ -10,13 +10,13 @@ import UIKit
 
 class AddOrder: UIViewController {
     
-
     @IBOutlet weak var CPTCodeTextBox: UITextField!
     
     @IBOutlet weak var CPTShortTextBox: UITextField!
     
     @IBOutlet weak var CPTLongTextBox: UITextField!
     
+
     @IBAction func AddOrderButton(_ sender: Any) {
         CPTCodeData.append(CPTCodeTextBox.text!)
         shortData.append(CPTShortTextBox.text!)
@@ -25,4 +25,3 @@ class AddOrder: UIViewController {
         deleteCounter+=1
     }
 }
-
