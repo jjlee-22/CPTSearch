@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F1E59CB237CA2DB000CAA2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1E59CA237CA2DB000CAA2A /* Main.storyboard */; };
+		3F2E5D44239864810095DA3C /* AddOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2E5D43239864810095DA3C /* AddOrder.swift */; };
 		882F45C6238C783500088C34 /* leg.png in Resources */ = {isa = PBXBuildFile; fileRef = 882F45C5238C783400088C34 /* leg.png */; };
 		883BC5AA2385E01200558F2D /* rightthingh.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC59B2385E01100558F2D /* rightthingh.png */; };
 		883BC5AB2385E01200558F2D /* rightshoulder.png in Resources */ = {isa = PBXBuildFile; fileRef = 883BC59C2385E01100558F2D /* rightshoulder.png */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		3F1E59CA237CA2DB000CAA2A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3F2E5D43239864810095DA3C /* AddOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrder.swift; sourceTree = "<group>"; };
 		882F45C5238C783400088C34 /* leg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leg.png; sourceTree = "<group>"; };
 		883BC59B2385E01100558F2D /* rightthingh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightthingh.png; sourceTree = "<group>"; };
 		883BC59C2385E01100558F2D /* rightshoulder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightshoulder.png; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			children = (
 				888C6D4E23453B2F00C624BD /* Images */,
 				D413B9F0233020590097CE56 /* AppDelegate.swift */,
+				3F2E5D43239864810095DA3C /* AddOrder.swift */,
 				3F1E59CA237CA2DB000CAA2A /* Main.storyboard */,
 				D4D51D552395656D00920374 /* SpecialistsTableViewController.swift */,
 				D4D51D53239560D500920374 /* SpecialistsTableViewCell.swift */,
@@ -318,6 +321,7 @@
 				D4D51D4123954D2100920374 /* Specialists.swift in Sources */,
 				D4D51D562395656D00920374 /* SpecialistsTableViewController.swift in Sources */,
 				D4D51D54239560D500920374 /* SpecialistsTableViewCell.swift in Sources */,
+				3F2E5D44239864810095DA3C /* AddOrder.swift in Sources */,
 				D413B9F1233020590097CE56 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -791,7 +791,7 @@
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Add New Order"/>
                                 <connections>
-                                    <action selector="AddOrderButton:" destination="rbM-Yg-A45" eventType="touchUpInside" id="yjM-me-4TB"/>
+                                    <action selector="AddOrderButton:" destination="rbM-Yg-A45" eventType="touchUpInside" id="JKt-hC-fAS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CPT Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAD-TU-KUB">
@@ -821,9 +821,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="Cl3-q5-o8C"/>
                     <connections>
-                        <outlet property="CPTCodeTextBox" destination="BjZ-Zb-6Gj" id="upt-0c-mnK"/>
-                        <outlet property="CPTLongTextBox" destination="453-ku-FAE" id="OB5-9J-hFZ"/>
-                        <outlet property="CPTShortTextBox" destination="Py5-d8-2jT" id="PZf-gb-ETk"/>
+                        <outlet property="AddOrderButton" destination="DQo-a8-Xbi" id="ihA-87-OUg"/>
+                        <outlet property="CPTCodeTextBox" destination="BjZ-Zb-6Gj" id="aM9-Oj-c3i"/>
+                        <outlet property="CPTLongTextBox" destination="453-ku-FAE" id="PYw-Rr-t4c"/>
+                        <outlet property="CPTShortTextBox" destination="Py5-d8-2jT" id="LNQ-fD-RJs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsy-cL-np3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -845,6 +846,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="EVV-wl-Ph5"/>
         <segue reference="V48-Bv-cvT"/>
-        <segue reference="k0B-Ob-LdV"/>
+        <segue reference="dYm-dI-Mbc"/>
     </inferredMetricsTieBreakers>
 </document>
