@@ -22,6 +22,9 @@ var indexTrackerforCPTCode = 0 // tracks index location of CPT code
 var dictionaryIndex = 0 //keeps track of index location of orderList
 var alphabeticalBoolean = true
 
+var DataGrabber = 0
+var deleteCounter = CPTCodeData.count
+
 
 // map CPTDictionary to easily obtain each component
 var orderList = CPTDictionary.map {(CPTCode: $0.key,
@@ -29,15 +32,14 @@ var orderList = CPTDictionary.map {(CPTCode: $0.key,
                                     Long:  $0.value.dropFirst().first ?? "")}
 
 //sort short description alphabetically in descending order
-let sortedDictionary = orderList.sorted(by: { $0.Short < $1.Short })
+var sortedDictionary = orderList.sorted(by: { $0.Short < $1.Short })
 
 //filter options - MRI/MR and CT
 var filterOrder = sortedDictionary
 
 // counter for each filter option
 var filterCount = 0
-//var MRIFilterCount = 0
-//var CTFilterCount = 0
+
 
 // filter booleans
 var MRIFilterBoolean = false
@@ -70,16 +72,16 @@ class TableViewController: UITableViewController {
     @IBOutlet var filterView: UIView!
     @IBOutlet var sortButton: UIButton!
 
-
    
-
+    
     //sort catalog short description alphabetically
      @IBAction func sortButton(_ sender: Any) {
         procedureBoolean(MRI: false, CT: false)
         alphabeticalBoolean = !alphabeticalBoolean
-        displayResults(NumberOfRows: CPTCodeData.count)
+        displayResults(NumberOfRows: deleteCounter)
      }
 
+    //filter by MR and MRI
     @IBAction func MRButton(_ sender: Any) {
         hideView()
         procedureBoolean(MRI: true, CT: false)
@@ -88,6 +90,7 @@ class TableViewController: UITableViewController {
         displayResults(NumberOfRows: filterCount)
     }
     
+    //filter by CT
     @IBAction func CTButton(_ sender: Any) {
         hideView()
         procedureBoolean(MRI: false, CT: true)
@@ -96,48 +99,58 @@ class TableViewController: UITableViewController {
         displayResults(NumberOfRows: filterCount)
     }
     
+    //display all results
     @IBAction func allResultsButton(_ sender: Any) {
         filterView.isHidden = true
         sortButton.isHidden = false
         alphabeticalBoolean = true
         procedureBoolean(MRI: false, CT: false)
-        displayResults(NumberOfRows: CPTCodeData.count)
+        displayResults(NumberOfRows: deleteCounter)
     }
     
+    //hide the filter options (MR/MRI, CT, and ALL)
     @IBAction func filterButton(_ sender: Any) {
         filterView.isHidden = !filterView.isHidden
     }
     
+    //hide filter options and sort button
     func hideView() {
         filterView.isHidden = true
         sortButton.isHidden = true
     }
     
+    //depending on the selected filter, booleans will change accordingly
     func procedureBoolean(MRI: Bool, CT: Bool) {
         MRIFilterBoolean = MRI
         CTFilterBoolean = CT
     }
     
+    //display the number of results found
     func displayResults(NumberOfRows: Int) {
         catalogTableview.reloadData()
         resultLabel.text = "\(NumberOfRows) results"
     }
     
+    //filter data by a particular keyword, case insensitive
     func filterData(keyword: String) {
          filterOrder = sortedDictionary.filter {($0.Short.range(of: keyword, options: .caseInsensitive)) != nil}
     }
     
     
-// loads content of catalog page
+    //loads content of catalog page
     override func viewDidLoad() {
         super.viewDidLoad()
         pressedSearchButton = false
         // cuztomize row height of table
         catalogTableview.rowHeight = 80.0
+        if(DataGrabber == 0) {
         loadData()
-        resultLabel.text = "\(CPTCodeData.count) results"
+        }
+        resultLabel.text = "\(deleteCounter) results"
+        catalogTableview.reloadData()
+        
     }
-    
+    //pulls data from plist and store them in arrays
     func loadData() {
         //print("Added the stuff")
         CPTCodeData.removeAll()
@@ -183,6 +196,9 @@ class TableViewController: UITableViewController {
         } catch {
             print("Error grabbing data from properly list: ", error)
         }
+       
+        //grabs data from plist once
+        DataGrabber+=1
     }
     
 // MARK: - Table view data source
@@ -249,17 +265,12 @@ class TableViewController: UITableViewController {
             CPTCodeData.remove(at: indexPath.row)
             shortData.remove(at: indexPath.row)
             longData.remove(at: indexPath.row)
+            
+    
             catalogTableview.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-            
-           /* let ordersDictionaryPath = Bundle.main.path(forResource: "Orders", ofType: "plist")
-            let ordersDictionary = NSMutableDictionary(contentsOfFile: ordersDictionaryPath!)
-
-            let CPTCodeArray = ordersDictionary?.object(forKey: "CPTCode") as! NSMutableArray
-            CPTCodeArray[0] = ""
-            ordersDictionary?.write(toFile: ordersDictionaryPath!, atomically: true)*/
-            
-            dictionaryIndex -= 1;
-            displayResults(NumberOfRows: dictionaryIndex)
+                       
+            deleteCounter -= 1
+            displayResults(NumberOfRows: deleteCounter)
         }
     }
 }
