@@ -23,7 +23,6 @@ var dictionaryIndex = 0 //keeps track of index location of orderList
 var alphabeticalBoolean = true
 
 
-
 // map CPTDictionary to easily obtain each component
 var orderList = CPTDictionary.map {(CPTCode: $0.key,
                                     Short: $0.value.first ?? "",
@@ -45,6 +44,13 @@ var MRIFilterBoolean = false
 var CTFilterBoolean = false
 var Headboolean = false
 
+
+//  For Search Screen:
+var pressedSearchButton = false
+var proceduresList = [String]()
+var c = [String]()
+var s = [String]()
+var l = [String]()
 // MARK: - UITableViewCell
 
 // customized row in UITableView: includes 2 labels
@@ -125,6 +131,7 @@ class TableViewController: UITableViewController {
 // loads content of catalog page
     override func viewDidLoad() {
         super.viewDidLoad()
+        pressedSearchButton = false
         // cuztomize row height of table
         catalogTableview.rowHeight = 80.0
         loadData()
@@ -132,6 +139,7 @@ class TableViewController: UITableViewController {
     }
     
     func loadData() {
+        //print("Added the stuff")
         CPTCodeData.removeAll()
         shortData.removeAll()
         longData.removeAll()
@@ -223,7 +231,15 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        pressedSearchButton = false
         orderIndex = indexPath.row
+        print(orderIndex)
+        //cell.CPTCodeLabel?.text = CPTCodeData[orderIndex]
+        //print(CPTCodeData[orderIndex])
+        //titleLabel?.text = shortData[orderIndex]
+        //print(shortData[orderIndex])
+        //descriptionLabel?.text = longData[orderIndex]
+        //print(longData[orderIndex])
         //creates connection to description page
         performSegue(withIdentifier: "segue", sender: self)
     }
@@ -247,4 +263,3 @@ class TableViewController: UITableViewController {
         }
     }
 }
-

@@ -55,8 +55,11 @@ extension String
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     
-    var proceduresList = [String]()
-    
+    //var proceduresList = [String]()
+    var newProceduresList = [String]()
+    var nc = [String]()
+    var ns = [String]()
+    var nl = [String]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -122,23 +125,36 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        //orderIndex2 = indexPath2.row
+        //print(orderIndex2)
+        pressedSearchButton = true
         orderIndex = indexPath.row
-        print(orderIndex)
         
-        CPTCodeLabel?.text = CPTCodeData[orderIndex]
-        print(CPTCodeData[orderIndex])
-        titleLabel?.text = shortData[orderIndex]
-        print(shortData[orderIndex])
-        descriptionLabel?.text = longData[orderIndex]
-        print(longData[orderIndex])
+       
+        //CPTCodeLabel?.text = CPTCodeData[orderIndex]
+        //print(CPTCodeData[orderIndex])
+        //titleLabel?.text = shortData[orderIndex]
+        //print(shortData[orderIndex])
+        //descriptionLabel?.text = longData[orderIndex]
+        //print(longData[orderIndex])
         
         //creates connection to description page
         performSegue(withIdentifier: "searchToDescription", sender: self)
     }
     
-   
-    
+    var CPTCodeData2 = [String]() // stores all CPT codes
+    var shortData2 = [String]() // stores all CPT short descriptions
+    var longData2 = [String]() // stores all CPT long descriptions
+    var CPTDictionary2 = [String: [String]]() // stores key->value(s) pairs
 
+    var orderIndex2 = 0 // tracks index location of each order
+    var indexTrackerforLongdescription2 = 0 // tracks index location of CPT long description
+    var indexTrackerforCPTCode2 = 0 // tracks index location of CPT code
+    var dictionaryIndex2 = 0 //keeps track of index location of orderList
+    var alphabeticalBoolean2 = true
+    
+    //  For Search Screen:
+    //var pressedSearchButton = false
     @IBOutlet weak var theTable: UITableView!
     
     
@@ -147,7 +163,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var CPTCodeLabel: UILabel!
     
-    @IBOutlet weak var submit: UIButton!    
+    @IBOutlet weak var submit: UIButton!
     @IBOutlet weak var attachnotesicon: UIImageView!
     @IBOutlet weak var attachnotes: UITextField!
     
@@ -157,7 +173,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         attachnotesicon.isHidden = false
     }
     
-    var FirstTableArray = [String]()
+    var FirstTableArray2 = [String]()
     //var SecondTableArray = [SecondTable]()
 
 
@@ -238,129 +254,217 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func searchAndLongDescStuff()
+    {
+        
+        //alphabeticalBoolean = true
+        //MRIFilterBoolean = false
+        //CTFilterBoolean = false
+        loadData2()
+        //sendValue.loadData()
+        print("Beginning of one search:")
+        print()
+        //  Deletes everything from the table each search.
+        //proceduresList = []
+        proceduresList.removeAll()
+        c.removeAll()
+        s.removeAll()
+        l.removeAll()
+            
+        resultsCounter = 0
+        //  Gets ready to set the regular expression equal to the search bar text
+
+        currentRegularExpression = regularExpressionSearch.text ?? "error"
+        
+        currentRegularExpression = procedureSelection + currentRegularExpression + contrastSelection + dyeSelection
+        //currentRegularExpression = procedureSelection + "([A-Z+] )*" + currentRegularExpression
+        //currentRegularExpression = procedureSelection + " " + "[a-z0-9]*" + currentRegularExpressio    var test = ""
+             // Checks all of the indexes in the
+            //  shortData PList to see if it contains the
+            //  regular expression or not.
+            var test = ""
+        /*
+            for index in CPTCodeData2
+            {
+                test = index
+                
+                var hashtags = test.hashtags(currentRegularExpression: currentRegularExpression, stringLength: "Full");
+                
+                //  This deals with the special case of if nothing is selected, just print the entire table once.
+                if (procedureSelection == ".*" && contrastSelection == ".*" && dyeSelection == ".*" && currentRegularExpression == "")
+                {
+                    hashtags = test.hashtags(currentRegularExpression: currentRegularExpression, stringLength: "One");
+                }
+
+                for index2 in hashtags
+                {
+                    //  Only add to the results counter if
+                    //  a result was found at that index
+                    if (index2 != "")
+                    {
+                        print(index)
+                        //  Adds it to the table
+                        //proceduresList.append(index)
+                        c.append(index)
+                        //s.append(index)
+                        //l.append(index)
+                        //resultsCounter = resultsCounter + 1
+                    }
+                }
+        }*/
+                //for index in shortData2
+                for i in 0 ... 117
+                {
+                    //var index = i
+                    //test = index
+                    test = shortData2[i]
+                    
+                    var hashtags = test.hashtags(currentRegularExpression: currentRegularExpression, stringLength: "Full");
+                    
+                    //  This deals with the special case of if nothing is selected, just print the entire table once.
+                    if (procedureSelection == ".*" && contrastSelection == ".*" && dyeSelection == ".*" && currentRegularExpression == "")
+                    {
+                        hashtags = test.hashtags(currentRegularExpression: currentRegularExpression, stringLength: "One");
+                    }
+
+                    for index2 in hashtags
+                    {
+                        //  Only add to the results counter if
+                        //  a result was found at that index
+                        if (index2 != "")
+                        {
+                            //print(index)
+                            print(shortData2[i])
+                            c.append(CPTCodeData2[i])
+                            s.append(shortData2[i])
+                            l.append(longData2[i])
+                            resultsCounter = resultsCounter + 1
+                            //proceduresList.append(c[i]+s[i])
+                            //  Adds it to the table
+                            //proceduresList.append(index)
+                            //c.append(index)
+                            /*
+                            s.append(index)
+                            //l.append(index)
+                            //resultsCounter = resultsCounter + 1
+                            for index3 in CPTCodeData2
+                            {
+                                if (index3 == index)
+                                {
+                                    c.append(index)
+                                }
+                            }
+                            for index3 in longData2
+                            {
+                                if (index3 == index)
+                                {
+                                    l.append(index)
+                                }
+                            }*/
+                        }
+                    }
+                    
+                }
+            
+            
+            /*for index in shortData
+            {
+                //  This gets the exact text, not a regular expression! Doesn't recognize characters like *, +, . !
+                //if((index.range(of: currentRegularExpression, options: .caseInsensitive)) != nil)
+                //if((index.range(of: regex, options: .caseInsensitive)) != nil)
+                if((index.range(of: currentRegularExpression, options: .caseInsensitive)) != nil)
+                {
+                    //shortData.append(index)
+                    print(index)
+                    resultsCounter = resultsCounter + 1
+                }
+            }*/
+            
+            //  Concatinating strings in Swift more
+            //  difficult than in Java, can't append and int
+            //  to a string, need to cast first
+            string2 = String(resultsCounter)
+            numberOfResultsLabel.text = string1 + string2
+        for i in 0 ..< s.count
+        {
+            proceduresList.append(c[i] + s[i])
+        }
+        print(proceduresList.count)
+            
+            //loadData2()
+            //  Makes the Table totally work! BUT the long description page is totally broken!
+            theTable.reloadData()
+            UserDefaults.standard.set(proceduresList, forKey: "theProceduresList")
+            UserDefaults.standard.set(c, forKey: "tc")
+            UserDefaults.standard.set(s, forKey: "ts")
+            UserDefaults.standard.set(l, forKey: "tl")
+            print(proceduresList.count)
+            print()
+            print("End of one search.")
+            print()
+            print()
+
+
+        }
       //  I added a button -Lindsey
 
     @IBAction func searchButton(_ sender: UIButton)
     {
-    //loadData()
-        
-    print("Beginning of one search:")
-    print()
-    //  Deletes everything from the table each search.
-    proceduresList = []
-    
-    resultsCounter = 0
-    //  Gets ready to set the regular expression equal to the search bar text
-    currentRegularExpression = regularExpressionSearch.text ?? "error"
-    
-    currentRegularExpression = procedureSelection + currentRegularExpression + contrastSelection + dyeSelection
-    //currentRegularExpression = procedureSelection + "([A-Z+] )*" + currentRegularExpression
-    //currentRegularExpression = procedureSelection + " " + "[a-z0-9]*" + currentRegularExpressio    var test = ""
-         // Checks all of the indexes in the
-        //  shortData PList to see if it contains the
-        //  regular expression or not.
-        var test = ""
-        for index in shortData
-        {
-            test = index
-            
-            var hashtags = test.hashtags(currentRegularExpression: currentRegularExpression, stringLength: "Full");
-            
-            //  This deals with the special case of if nothing is selected, just print the entire table once.
-            if (procedureSelection == ".*" && contrastSelection == ".*" && dyeSelection == ".*" && currentRegularExpression == "")
-            {
-                hashtags = test.hashtags(currentRegularExpression: currentRegularExpression, stringLength: "One");
-            }
-
-            for index2 in hashtags
-            {
-                //  Only add to the results counter if
-                //  a result was found at that index
-                if (index2 != "")
-                {
-                    print(index)
-                    //  Adds it to the table
-                    proceduresList.append(index)
-                    resultsCounter = resultsCounter + 1
-                }
-            }
-        }
-        
-        
-        /*for index in shortData
-        {
-            //  This gets the exact text, not a regular expression! Doesn't recognize characters like *, +, . !
-            //if((index.range(of: currentRegularExpression, options: .caseInsensitive)) != nil)
-            //if((index.range(of: regex, options: .caseInsensitive)) != nil)
-            if((index.range(of: currentRegularExpression, options: .caseInsensitive)) != nil)
-            {
-                //shortData.append(index)
-                print(index)
-                resultsCounter = resultsCounter + 1
-            }
-        }*/
-        
-        //  Concatinating strings in Swift more
-        //  difficult than in Java, can't append and int
-        //  to a string, need to cast first
-        string2 = String(resultsCounter)
-        numberOfResultsLabel.text = string1 + string2
-        
-        //  Makes the Table totally work! BUT the long description page is totally broken!
-        theTable.reloadData()
-        
-        print()
-        print("End of one search.")
-        print()
-        print()
-}
-    func loadData()
+        //sendValue.pressedSearchButton = true
+        pressedSearchButton = true
+        searchAndLongDescStuff()
+    }
+    func loadData2()
     {
-        CPTCodeData.removeAll()
-        shortData.removeAll()
+        //print("Deleted the stuff")
+        //  Need here for my screen, but not for Truc's:
+
+        
+        CPTCodeData2.removeAll()
+        shortData2.removeAll()
         proceduresList.removeAll()
-        longData.removeAll()
-        indexTrackerforLongdescription = 0
-        indexTrackerforCPTCode = 0
-        dictionaryIndex = 0
+        longData2.removeAll()
+        indexTrackerforLongdescription2 = 0
+        indexTrackerforCPTCode2 = 0
+        dictionaryIndex2 = 0
             
         // obtains Orders.plist
-        let url = Bundle.main.url(forResource:"Orders", withExtension: "plist")!
+        let url2 = Bundle.main.url(forResource:"Orders", withExtension: "plist")!
             
         // extract plist info into arrays
         do
         {
-            let data = try Data(contentsOf: url)
-            let sections = try PropertyListSerialization.propertyList(from: data, format: nil) as! [[Any]]
+            let data2 = try Data(contentsOf: url2)
+            let sections2 = try PropertyListSerialization.propertyList(from: data2, format: nil) as! [[Any]]
                 
             // loop through each subarray of plist
             // _ defines unnamed parameter, did not need to keep track of index of each subarray
-            for (_, section) in sections.enumerated()
+            for (_, section) in sections2.enumerated()
             {
                 // obtains all components(CPTCode, short description, and long description of a subarray
                 for item in section
                 {
-                    indexTrackerforLongdescription+=1
+                    indexTrackerforLongdescription2+=1
                     // adds all CPT longDescription to longData
-                    if(indexTrackerforLongdescription%3==0)
+                    if(indexTrackerforLongdescription2%3==0)
                     {
-                        longData.append(item as! String)
+                        longData2.append(item as! String)
                     }
                     else
                     {
                         // adds all CPTCodes to CPTCodeData
-                        if(indexTrackerforCPTCode%2==0)
+                        if(indexTrackerforCPTCode2%2==0)
                         {
-                            CPTCodeData.append(item as! String)
+                            CPTCodeData2.append(item as! String)
                             //proceduresList.append(item as! String)
                         }
                         else
                         {
                             // add all CPT shortDescription to shortData
-                            shortData.append(item as! String)
+                            shortData2.append(item as! String)
                             //proceduresList.append(item as! String)
                         }
-                        indexTrackerforCPTCode+=1
+                        indexTrackerforCPTCode2+=1
                     }
                 }
                 // create dictionary: CPTCodeData (key) --> shortData, longData (values)
@@ -374,9 +478,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print("Error grabbing data from properly list: ", error)
         }
         
-        for i in 1 ..< shortData.count
+        //  Nope! Arrays start at 0! Facepalm!
+        //for i in 1 ..< shortData2.count
+        for i in 0 ..< shortData2.count
         {
-            proceduresList.append(CPTCodeData[i] + shortData[i])
+            proceduresList.append(CPTCodeData2[i] + shortData2[i])
         }
         //  Split procedures list into two lists, then go through with a for-loop and combine them into one list and
         //  display that on table.
@@ -404,7 +510,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         //  Now starting Truc's table stuff but here:
         //theTable.rowHeight = 80.0
-        loadData()
+        //loadData2()
         //CPTCodeLabel?.text = CPTCodeData[orderIndex]
         //titleLabel?.text = shortData[orderIndex]
         //descriptionLabel?.text = longData[orderIndex]
@@ -413,39 +519,66 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //sendValue.loadData();
         
         //  Works! 11!
-        /*if (CPTCodeData.isEmpty == true)
+        if (CPTCodeData.isEmpty == true)
         {
             sendValue.loadData()
-        }*/
+        }
+        
+        //  Needs to load the original stuff whenever on the Search screen, a fix?
+        //let onSearchScreen = true
+        //proceduresList.append("Pls dont work")
 
-                        
+
+        
          // Do any additional setup after loading the view.
         // displays data according to boolean status
-        
-         if(CPTCodeData.isEmpty == false && alphabeticalBoolean == true)
+         //if((CPTCodeData.isEmpty == false && alphabeticalBoolean == true) || onSearchScreen == true)
+        if (pressedSearchButton == true)
+        {
+            print("Loaded right")
+            //searchAndLongDescStuff()
+            newProceduresList = UserDefaults.standard.object(forKey: "theProceduresList") as! [String]
+            nc = UserDefaults.standard.object(forKey: "tc") as! [String]
+            ns = UserDefaults.standard.object(forKey: "ts") as! [String]
+            nl = UserDefaults.standard.object(forKey: "tl") as! [String]
+            print(newProceduresList.count)
+            print(newProceduresList[orderIndex])
+            CPTCodeLabel?.text = c[orderIndex]
+            titleLabel?.text = s[orderIndex]
+            descriptionLabel?.text = l[orderIndex]
+        }
+        else if(CPTCodeData.isEmpty == false && alphabeticalBoolean == true && MRIFilterBoolean == false && CTFilterBoolean == false)
          {
+            print("Loaded wrong")
                 CPTCodeLabel?.text = CPTCodeData[orderIndex]
                 titleLabel?.text = shortData[orderIndex]
                 descriptionLabel?.text = longData[orderIndex]
          }
-         if(CPTCodeData.isEmpty == false && alphabeticalBoolean == false)
+        
+        
+         else if(CPTCodeData.isEmpty == false && alphabeticalBoolean == false && MRIFilterBoolean == false && CTFilterBoolean == false)
          {
+            print("Loaded dif")
              CPTCodeLabel?.text = sortedDictionary[orderIndex].CPTCode
              titleLabel?.text = sortedDictionary[orderIndex].Short
              descriptionLabel?.text = sortedDictionary[orderIndex].Long
          }
-        if(MRIFilterBoolean == true || CTFilterBoolean == true) {
-            CPTCodeLabel?.text = filterOrder[orderIndex].CPTCode
-            titleLabel?.text = filterOrder[orderIndex].Short
-            descriptionLabel?.text = filterOrder[orderIndex].Long
-        }
          
-         
+         else if(MRIFilterBoolean == true || CTFilterBoolean == true) {
+            print("Loaded MRI/CT")
+             CPTCodeLabel?.text = filterOrder[orderIndex].CPTCode
+             titleLabel?.text = filterOrder[orderIndex].Short
+             descriptionLabel?.text = filterOrder[orderIndex].Long
+         }
+        
+
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.tintColor = UIColor.white
     }
 }
+
+
 
 
 
