@@ -198,6 +198,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let sendValue = TableViewController();
     //sendValue.loadData();
     
+    //creates the good for bad for button on the long description page
+    //there was no data supplied by the doctors or clinic team so a place holder was added
+    @IBOutlet weak var goodBad: UISegmentedControl!
+    @IBOutlet weak var goodBadLabel: UILabel!
+    
+    @IBAction func goodBad(_ sender: Any) {
+        switch goodBad.selectedSegmentIndex
+        {
+        case 0:
+            goodBadLabel.text = "human people in the hospital"
+        case 1:
+            goodBadLabel.text = "aliens"
+        default:
+            break
+        }
+    }
+
+    
     //  Before the button, need to get the values from the Segmented Controls for like CT vs MRI
     @IBOutlet weak var procedureType: UISegmentedControl!
     @IBAction func indexChangedProcedureType(_ sender: Any)
