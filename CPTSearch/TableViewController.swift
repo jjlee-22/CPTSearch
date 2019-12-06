@@ -47,7 +47,7 @@ var CTFilterBoolean = false
 var Headboolean = false
 
 
-//  For Search Screen:
+//  For Search Screen, Lindsey:
 var pressedSearchButton = false
 var proceduresList = [String]()
 var c = [String]()
@@ -72,7 +72,13 @@ class TableViewController: UITableViewController {
     @IBOutlet var filterView: UIView!
     @IBOutlet var sortButton: UIButton!
 
-   
+    //  I made a segue to your new screen to test
+    //  that the screen fits on an iPhone7 -Lindsey
+    @IBAction func addOrderButton(_ sender: Any)
+    {
+        performSegue(withIdentifier: "catalogToAddOrder", sender: self)
+    }
+    
     
     //sort catalog short description alphabetically
      @IBAction func sortButton(_ sender: Any) {
@@ -137,9 +143,12 @@ class TableViewController: UITableViewController {
     }
     
     
+    
+    
     //loads content of catalog page
     override func viewDidLoad() {
         super.viewDidLoad()
+        //  The line below is needed for the Search screen -Lindsey
         pressedSearchButton = false
         // cuztomize row height of table
         catalogTableview.rowHeight = 80.0

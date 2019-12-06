@@ -45,11 +45,7 @@ extension String
 }
 //  End of Regular Expression Struct
 
-//  PUT PROTOTYPE CELL CLASS HERE!!
-/*class CellClass: UITableViewCell
-{
-    
-}*/
+
 // MARK: - UIViewController
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
@@ -61,68 +57,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var ns = [String]()
     var nl = [String]()
     
+    //  The amount of rows in the table should be the amount of rows in the proceduresList(), which only stores
+    //  the procedures contained in the regular expression.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        // #warning Incomplete implementation, return the number of rows
-        /*if(MRIFilterBoolean == true) {
-            return filterCount
-        }
-        if(CTFilterBoolean == true) {
-            return filterCount
-        }
-        else {
-        return CPTCodeData.count
-        }*/
-        
-        //proceduresList.removeAll()
-        //  Testing with one cell for now.
-        //proceduresList.append("Working")
-        //proceduresList.append("Working2")
-        //return 1
-        
         return proceduresList.count
     }
     
+    //  This loops through each index in the proceduresList() and sets the text of that row in the table
+    //  equal to that index in the ArrayList.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        //use cell format of customized UITableViewCell
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "theCell", for: indexPath) as! CellClass
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-        //cell.textLabel?.text = "Working"
-        
-        //  THIS IS WHERE EACH ROW OF THE TABLE GETS CREATED!! WANT IT TO ONLY BE THERE IF PART OF REGEX!!
         cell.textLabel?.text = proceduresList[indexPath.row]
-        //cell.textLabelTwo?.text = "Working2"
-        // Configure the cell...
-        /*if (MRIFilterBoolean == true && CTFilterBoolean == false) {
-            cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
-            cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
-            return cell
-        }
-        if(CTFilterBoolean == true && MRIFilterBoolean == false) {
-            cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
-            cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
-            return cell
-        }
-            
-        //catalog page displays CPT Code in ascending order
-        if alphabeticalBoolean && MRIFilterBoolean == false {
-            cell.CPTCodeLabel.text = "CPT Code: \(CPTCodeData[indexPath.row])"
-            cell.CPTShortDescriptionLabel.text = shortData[indexPath.row]
-            return cell
-        }
-            // once sort button is clicked, catalog page displays CPT short description
-            // alphabetically
-        else  {
-            cell.CPTCodeLabel.text = "CPT Code: \(sortedDictionary[indexPath.row].CPTCode)"
-            cell.CPTShortDescriptionLabel.text = sortedDictionary[indexPath.row].Short
-            return cell
-         
-        }*/
         return cell
-        
     }
     
+    //  This seems to finally be working. If a user clicks on a certain row on the table, it will send them to the
+    //  Description screen that has more info about the procedure in that row.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         //orderIndex2 = indexPath2.row
@@ -496,8 +448,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print("Error grabbing data from properly list: ", error)
         }
         
-        //  Nope! Arrays start at 0! Facepalm!
-        //for i in 1 ..< shortData2.count
         for i in 0 ..< shortData2.count
         {
             proceduresList.append(CPTCodeData2[i] + shortData2[i])
@@ -523,8 +473,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        //
+        // Do any additional setup after loading the view.
         
         //  Now starting Truc's table stuff but here:
         //theTable.rowHeight = 80.0
@@ -541,6 +490,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         {
             sendValue.loadData()
         }
+        /*if (c.isEmpty == true)
+        {
+            sendValue.loadData()
+        }*/
         
         //  Needs to load the original stuff whenever on the Search screen, a fix?
         //let onSearchScreen = true
@@ -548,12 +501,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 
         
-         // Do any additional setup after loading the view.
+
         // displays data according to boolean status
          //if((CPTCodeData.isEmpty == false && alphabeticalBoolean == true) || onSearchScreen == true)
         if (pressedSearchButton == true)
         {
-            print("Loaded right")
+            print("Loaded right for Search screen")
             //searchAndLongDescStuff()
             newProceduresList = UserDefaults.standard.object(forKey: "theProceduresList") as! [String]
             nc = UserDefaults.standard.object(forKey: "tc") as! [String]
@@ -567,7 +520,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         else if(CPTCodeData.isEmpty == false && alphabeticalBoolean == true && MRIFilterBoolean == false && CTFilterBoolean == false)
          {
-            print("Loaded wrong")
+            print("Loaded right for Catalog screen")
                 CPTCodeLabel?.text = CPTCodeData[orderIndex]
                 titleLabel?.text = shortData[orderIndex]
                 descriptionLabel?.text = longData[orderIndex]
@@ -576,7 +529,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
          else if(CPTCodeData.isEmpty == false && alphabeticalBoolean == false && MRIFilterBoolean == false && CTFilterBoolean == false)
          {
-            print("Loaded dif")
+            print("Loaded sorted")
              CPTCodeLabel?.text = sortedDictionary[orderIndex].CPTCode
              titleLabel?.text = sortedDictionary[orderIndex].Short
              descriptionLabel?.text = sortedDictionary[orderIndex].Long
