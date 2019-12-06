@@ -48,10 +48,104 @@ extension String
 
 // MARK: - UIViewController
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,  UITextFieldDelegate
 {
     
-    //var proceduresList = [String]()
+    
+    //  MARK: - Autocomplete Stuff
+    //  New! For autocomplete:
+    //  This array lists some commonly-occuring words in the test data that the Cleveland Clinic gave us.
+    //  For example, 11 short descriptions have the word "Chest" in them.
+    var autoCompletionPossibilities = ["Chest", "Head", "Abd", "Angio", "Spine", "Hrt", "Neck", "Orbit", "Pelvis", "Thorax", "Upper Extremity", "Lower Extremity"]
+    //  Uh-oh, many procedures have varying names, like sometimes called "Lower Extremity", sometimes "Lwr Extremity".
+    //  The regular expression will only catch one or the other, not both....
+    var autoCompleteCharacterCount = 0
+    var timer = Timer()
+    
+    @IBOutlet weak var textField: UITextField!
+    
+
+    
+    //  A bunch of autocomplete methods below. They are all copied-n-pasted from
+    //  https://medium.com/@aestusLabs/inline-autocomplete-textfields-swift-3-tutorial-for-ios-a88395ca2635
+    //  and worked on the first try!
+      func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { //1
+          var subString = (textField.text!.capitalized as NSString).replacingCharacters(in: range, with: string) // 2
+          subString = formatSubstring(subString: subString)
+          
+          if subString.count == 0 { // 3 when a user clears the textField
+              resetValues()
+          } else {
+              searchAutocompleteEntriesWIthSubstring(substring: subString) //4
+          }
+          return true
+      }
+      func formatSubstring(subString: String) -> String {
+          let formatted = String(subString.dropLast(autoCompleteCharacterCount)).lowercased().capitalized //5
+          return formatted
+      }
+      
+      
+      
+      func resetValues() {
+          autoCompleteCharacterCount = 0
+          textField.text = ""
+      }
+    
+    func searchAutocompleteEntriesWIthSubstring(substring: String) {
+           let userQuery = substring
+           let suggestions = getAutocompleteSuggestions(userText: substring) //1
+           
+           if suggestions.count > 0 {
+               timer = .scheduledTimer(withTimeInterval: 0.01, repeats: false, block: { (timer) in //2
+                   let autocompleteResult = self.formatAutocompleteResult(substring: substring, possibleMatches: suggestions) // 3
+                   self.putColourFormattedTextInTextField(autocompleteResult: autocompleteResult, userQuery : userQuery) //4
+                   self.moveCaretToEndOfUserQueryPosition(userQuery: userQuery) //5
+               })
+           } else {
+               timer = .scheduledTimer(withTimeInterval: 0.01, repeats: false, block: { (timer) in //7
+                   self.textField.text = substring
+               })
+               autoCompleteCharacterCount = 0
+           }
+       }
+    func getAutocompleteSuggestions(userText: String) -> [String]{
+        var possibleMatches: [String] = []
+        for item in autoCompletionPossibilities { //2
+            let myString:NSString! = item as NSString
+            let substringRange :NSRange! = myString.range(of: userText)
+            
+            if (substringRange.location == 0)
+            {
+                possibleMatches.append(item)
+            }
+        }
+        return possibleMatches
+    }
+    
+    func putColourFormattedTextInTextField(autocompleteResult: String, userQuery : String) {
+        let colouredString: NSMutableAttributedString = NSMutableAttributedString(string: userQuery + autocompleteResult)
+        colouredString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.green, range: NSRange(location: userQuery.count,length:autocompleteResult.count))
+        self.textField.attributedText = colouredString
+    }
+    func moveCaretToEndOfUserQueryPosition(userQuery : String) {
+        if let newPosition = self.textField.position(from: self.textField.beginningOfDocument, offset: userQuery.count) {
+            self.textField.selectedTextRange = self.textField.textRange(from: newPosition, to: newPosition)
+        }
+        let selectedRange: UITextRange? = textField.selectedTextRange
+        textField.offset(from: textField.beginningOfDocument, to: (selectedRange?.start)!)
+    }
+    func formatAutocompleteResult(substring: String, possibleMatches: [String]) -> String {
+        var autoCompleteResult = possibleMatches[0]
+        autoCompleteResult.removeSubrange(autoCompleteResult.startIndex..<autoCompleteResult.index(autoCompleteResult.startIndex, offsetBy: substring.count))
+        autoCompleteCharacterCount = autoCompleteResult.count
+        return autoCompleteResult
+    }
+    
+    
+    //  MARK: - Table Methods
+    
+        //var proceduresList = [String]()
     var newProceduresList = [String]()
     var nc = [String]()
     var ns = [String]()
@@ -94,6 +188,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         performSegue(withIdentifier: "searchToDescription", sender: self)
     }
     
+    //  MARK: - Most of the Global Variables
+    
     var CPTCodeData2 = [String]() // stores all CPT codes
     var shortData2 = [String]() // stores all CPT short descriptions
     var longData2 = [String]() // stores all CPT long descriptions
@@ -131,7 +227,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     //let backgroundImageView = UIImageView()
     
-    @IBOutlet weak var regularExpressionSearch: UISearchBar!
+    //  Replaced with textField !
+    //@IBOutlet weak var regularExpressionSearch: UISearchBar!
       var currentRegularExpression = String("")
     
     //  Starts as "Unsure", so searches for anything since not specified to like "W/DYE", or whatever
@@ -224,6 +321,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    //  MARK: - Method for reg-ex, table
     func searchAndLongDescStuff()
     {
         
@@ -244,7 +342,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         resultsCounter = 0
         //  Gets ready to set the regular expression equal to the search bar text
 
-        currentRegularExpression = regularExpressionSearch.text ?? "error"
+        currentRegularExpression = textField.text ?? "error"
         
         currentRegularExpression = procedureSelection + currentRegularExpression + contrastSelection + dyeSelection
         //currentRegularExpression = procedureSelection + "([A-Z+] )*" + currentRegularExpression
@@ -384,6 +482,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         pressedSearchButton = true
         searchAndLongDescStuff()
     }
+    //  MARK: - loadData2()
     func loadData2()
     {
         //print("Deleted the stuff")
@@ -458,7 +557,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         
 
-            
+      //    MARK: - Another table method
         func numberOfSections(in tableView: UITableView) -> Int
         {
              // #warning Incomplete implementation, return the number of sections
@@ -468,7 +567,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     
-    
+    //  MARK: - viewDidLoad()
     // This method only runs after the view loads
     override func viewDidLoad()
     {
