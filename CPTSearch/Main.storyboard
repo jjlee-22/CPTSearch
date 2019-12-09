@@ -224,46 +224,78 @@
                                 <rect key="frame" x="165" y="125" width="93" height="187"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="chest" image="bodyResize.png"/>
+                                <connections>
+                                    <action selector="chestFilter:" destination="ZCk-3z-qh2" eventType="touchUpInside" id="2Py-91-EYR"/>
+                                    <segue destination="2Cu-fc-u1N" kind="show" identifier="chestSegue" id="Sj4-4C-zLL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJ7-Nh-RHO">
                                 <rect key="frame" x="209" y="257" width="64" height="218"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="leg2" image="legResize.png"/>
+                                <connections>
+                                    <action selector="legFilter2:" destination="ZCk-3z-qh2" eventType="touchUpInside" id="xaO-aW-Qyo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZL-Yw-Fei">
                                 <rect key="frame" x="157" y="257" width="61" height="218"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="leg1" image="legResize.png"/>
+                                <connections>
+                                    <action selector="legFilter:" destination="ZCk-3z-qh2" eventType="touchUpInside" id="QH5-7t-tWP"/>
+                                    <segue destination="2Cu-fc-u1N" kind="show" identifier="legSegue" id="Jnw-ph-e0Q"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWi-ez-jyM">
                                 <rect key="frame" x="165" y="434" width="45" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="foot1" image="handResize1.png"/>
+                                <connections>
+                                    <action selector="feetFilter:" destination="ZCk-3z-qh2" eventType="touchUpInside" id="eyc-lR-rWz"/>
+                                    <segue destination="2Cu-fc-u1N" kind="show" identifier="feetSegue" id="lzg-l3-MR0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPu-gt-U7k">
                                 <rect key="frame" x="214" y="433" width="44" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="foot1" image="handResize1.png"/>
+                                <connections>
+                                    <action selector="feetFilter1:" destination="ZCk-3z-qh2" eventType="touchUpInside" id="5EX-HO-CSP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xR-E1-gQl">
                                 <rect key="frame" x="98" y="125" width="66" height="148"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="arm1" image="armResize1.png"/>
+                                <connections>
+                                    <action selector="armFilter:" destination="ZCk-3z-qh2" eventType="touchUpInside" id="YpF-r4-Lzc"/>
+                                    <segue destination="2Cu-fc-u1N" kind="show" identifier="armSegue" id="LrH-Ci-sx1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-Nk-fvQ">
                                 <rect key="frame" x="229" y="124" width="62" height="148"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="arm2" image="armResize2.png"/>
+                                <connections>
+                                    <action selector="armFilter2:" destination="ZCk-3z-qh2" eventType="touchUpInside" id="NNn-PO-hxN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzt-hw-PZ9">
                                 <rect key="frame" x="73" y="238" width="41" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="hand1" image="handResize1.png"/>
+                                <connections>
+                                    <action selector="handFilter:" destination="ZCk-3z-qh2" eventType="touchUpInside" id="uSZ-eC-aVC"/>
+                                    <segue destination="2Cu-fc-u1N" kind="show" identifier="handSegue" id="vSx-UU-yj4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRc-cx-pQ4">
                                 <rect key="frame" x="290" y="238" width="41" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="hand1" image="handResize1.png"/>
+                                <connections>
+                                    <action selector="handFilter2:" destination="ZCk-3z-qh2" eventType="touchUpInside" id="6eX-h2-MCC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIq-Yb-60T">
                                 <rect key="frame" x="262" y="530" width="113" height="47"/>
@@ -617,7 +649,7 @@
                                     <action selector="goodBad:" destination="Udd-n2-eA0" eventType="valueChanged" id="Fz3-Xd-KUp"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3j-7D-4tL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Human people in the hospital" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3j-7D-4tL">
                                 <rect key="frame" x="82" y="561" width="227" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -838,6 +870,6 @@
         <segue reference="EVV-wl-Ph5"/>
         <segue reference="fp1-Mn-oSU"/>
         <segue reference="dYm-dI-Mbc"/>
-        <segue reference="Qjs-FB-vkO"/>
+        <segue reference="Sj4-4C-zLL"/>
     </inferredMetricsTieBreakers>
 </document>

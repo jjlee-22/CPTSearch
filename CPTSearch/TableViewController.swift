@@ -45,6 +45,11 @@ var filterCount = 0
 var MRIFilterBoolean = false
 var CTFilterBoolean = false
 var headBoolean = false
+var legBoolean = false
+var armBoolean = false
+var handBoolean = false
+var feetBoolean = false
+var chestBoolean = false
 
 
 //  For Search Screen, Lindsey:
@@ -86,7 +91,40 @@ class TableViewController: UITableViewController {
         alphabeticalBoolean = !alphabeticalBoolean
         displayResults(NumberOfRows: deleteCounter)
      }
-    
+    func armFilter(){
+        hideView()
+        filterData(keyword: "ARM")
+        filterCount = filterOrder.count
+        displayResults(NumberOfRows: filterCount)
+    }
+
+    func chestFilter(){
+           hideView()
+           filterData(keyword: "CHEST")
+           filterCount = filterOrder.count
+           displayResults(NumberOfRows: filterCount)
+       }
+    func legFilter(){
+        hideView()
+        filterData(keyword: "LEG")
+        filterCount = filterOrder.count
+        displayResults(NumberOfRows: filterCount)
+    }
+
+    func feetFilter(){
+        hideView()
+        filterData(keyword: "FEET")
+        filterCount = filterOrder.count
+        displayResults(NumberOfRows: filterCount)
+    }
+
+    func handFilter(){
+        hideView()
+        filterData(keyword: "HAND")
+        filterCount = filterOrder.count
+        displayResults(NumberOfRows: filterCount)
+    }
+
     func headFilter(){
         hideView()
         filterData(keyword: "HEAD")
@@ -178,7 +216,33 @@ class TableViewController: UITableViewController {
                else if (typeOfBodyPart == "arm")
                {
                       //       call a method that only gets the arm data
+                armBoolean = true
+                armFilter()
                }
+            else if (typeOfBodyPart == "leg")
+            {
+                   //       call a method that only gets the arm data
+                legBoolean = true
+                legFilter()
+            }
+            else if (typeOfBodyPart == "feet")
+            {
+                   //       call a method that only gets the arm data
+                feetBoolean = true
+                feetFilter()
+            }
+            else if (typeOfBodyPart == "hand")
+            {
+                   //       call a method that only gets the arm data
+                handBoolean = true
+                handFilter()
+            }
+            else if (typeOfBodyPart == "chest")
+            {
+                   //       call a method that only gets the arm data
+                chestBoolean = true
+                chestFilter()
+            }
         }
     }
     //pulls data from plist and store them in arrays
@@ -246,6 +310,21 @@ class TableViewController: UITableViewController {
         if(headBoolean == true){
             return filterCount
         }
+        if(armBoolean == true){
+            return filterCount
+        }
+        if(legBoolean == true){
+            return filterCount
+        }
+        if(feetBoolean == true){
+            return filterCount
+        }
+        if(handBoolean == true){
+            return filterCount
+        }
+        if(chestBoolean == true){
+            return filterCount
+        }
         
         if(MRIFilterBoolean == true || CTFilterBoolean == true) {
             return filterCount
@@ -266,7 +345,31 @@ class TableViewController: UITableViewController {
             cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
             return cell
         }
-        
+        if(armBoolean == true){
+            cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
+            cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
+            return cell
+        }
+        if(legBoolean == true){
+            cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
+            cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
+            return cell
+        }
+        if(handBoolean == true){
+            cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
+            cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
+            return cell
+        }
+        if(feetBoolean == true){
+            cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
+            cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
+            return cell
+        }
+        if(chestBoolean == true){
+            cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
+            cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
+            return cell
+        }
         // Configure the cell...
         if (MRIFilterBoolean == true && CTFilterBoolean == false || CTFilterBoolean == true && MRIFilterBoolean == false && headBoolean == false) {
             cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"

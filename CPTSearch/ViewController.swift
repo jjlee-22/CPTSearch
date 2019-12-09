@@ -216,9 +216,59 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         UserDefaults.standard.set("head", forKey: "bodyPart")
         performSegue(withIdentifier: "headSegue", sender: self)
     }
+    @IBAction func armFilter(_ sender: Any) {
+        armBoolean = true
+        UserDefaults.standard.set("arm", forKey: "bodyPart")
+        performSegue(withIdentifier: "armSegue", sender: self)
+    }
+    @IBAction func handFilter(_ sender: Any) {
+        handBoolean = true
+        UserDefaults.standard.set("hand", forKey: "bodyPart")
+        performSegue(withIdentifier: "handSegue", sender: self)
+    }
+    @IBAction func legFilter(_ sender: Any) {
+        legBoolean = true
+        UserDefaults.standard.set("leg", forKey: "bodyPart")
+        performSegue(withIdentifier: "legSegue", sender: self)
+    }
+    @IBAction func feetFilter(_ sender: Any) {
+        feetBoolean = true
+        UserDefaults.standard.set("feet", forKey: "bodyPart")
+        performSegue(withIdentifier: "feetSegue", sender: self)
+    }
+    @IBAction func feetFilter1(_ sender: Any) {
+        feetBoolean = true
+        UserDefaults.standard.set("feet", forKey: "bodyPart")
+        performSegue(withIdentifier: "feetSegue", sender: self)
+    }
+    @IBAction func legFilter2(_ sender: Any) {
+        legBoolean = true
+        UserDefaults.standard.set("leg", forKey: "bodyPart")
+        performSegue(withIdentifier: "legSegue", sender: self)
+    }
+    @IBAction func armFilter2(_ sender: Any) {
+        armBoolean = true
+        UserDefaults.standard.set("arm", forKey: "bodyPart")
+        performSegue(withIdentifier: "armSegue", sender: self)
+    }
+    @IBAction func handFilter2(_ sender: Any) {
+        handBoolean = true
+        UserDefaults.standard.set("hand", forKey: "bodyPart")
+        performSegue(withIdentifier: "handSegue", sender: self)
+    }
+    @IBAction func chestFilter(_ sender: Any) {
+        chestBoolean = true
+        UserDefaults.standard.set("chest", forKey: "bodyPart")
+        performSegue(withIdentifier: "chestSegue", sender: self)
+    }
     
     @IBAction func Catalog(_ sender: Any) {
         headBoolean = false
+        legBoolean = false
+        armBoolean = false
+        handBoolean = false
+        feetBoolean = false
+        chestBoolean = false
         UserDefaults.standard.set(nil, forKey: "bodyPart")
     }
     
