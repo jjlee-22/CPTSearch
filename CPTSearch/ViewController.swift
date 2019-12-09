@@ -211,6 +211,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var CPTCodeLabel: UILabel!
     
+    @IBAction func headFilter(_ sender: Any) {
+        headBoolean = true
+        UserDefaults.standard.set("head", forKey: "bodyPart")
+        performSegue(withIdentifier: "headSegue", sender: self)
+    }
+    
+    @IBAction func Catalog(_ sender: Any) {
+        headBoolean = false
+        UserDefaults.standard.set(nil, forKey: "bodyPart")
+    }
+    
     @IBOutlet weak var submit: UIButton!
     @IBOutlet weak var attachnotesicon: UIImageView!
     @IBOutlet weak var attachnotes: UITextField!
@@ -634,7 +645,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
              descriptionLabel?.text = sortedDictionary[orderIndex].Long
          }
          
-         else if(MRIFilterBoolean == true || CTFilterBoolean == true) {
+         else if(MRIFilterBoolean == true || CTFilterBoolean == true || headBoolean == true) {
             print("Loaded MRI/CT")
              CPTCodeLabel?.text = filterOrder[orderIndex].CPTCode
              titleLabel?.text = filterOrder[orderIndex].Short

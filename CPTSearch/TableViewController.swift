@@ -44,7 +44,7 @@ var filterCount = 0
 // filter booleans
 var MRIFilterBoolean = false
 var CTFilterBoolean = false
-var Headboolean = false
+var headBoolean = false
 
 
 //  For Search Screen, Lindsey:
@@ -86,7 +86,14 @@ class TableViewController: UITableViewController {
         alphabeticalBoolean = !alphabeticalBoolean
         displayResults(NumberOfRows: deleteCounter)
      }
-
+    
+    func headFilter(){
+        hideView()
+        filterData(keyword: "HEAD")
+        filterCount = filterOrder.count
+        displayResults(NumberOfRows: filterCount)
+    }
+    
     //filter by MR and MRI
     @IBAction func MRButton(_ sender: Any) {
         hideView()
@@ -158,6 +165,21 @@ class TableViewController: UITableViewController {
         resultLabel.text = "\(deleteCounter) results"
         catalogTableview.reloadData()
         
+        let data = UserDefaults.standard.object(forKey: "bodyPart") // may not be "bodyPart", whatever
+        //       you named it
+        if let typeOfBodyPart = data as? String
+        {
+               if (typeOfBodyPart == "head")
+               {
+                       //      call the method that only gets the head data
+                headBoolean = true
+                headFilter()
+               }
+               else if (typeOfBodyPart == "arm")
+               {
+                      //       call a method that only gets the arm data
+               }
+        }
     }
     //pulls data from plist and store them in arrays
     func loadData() {
@@ -168,6 +190,8 @@ class TableViewController: UITableViewController {
         indexTrackerforLongdescription = 0
         indexTrackerforCPTCode = 0
         dictionaryIndex = 0
+        
+        
         
         // obtains Orders.plist
         let url = Bundle.main.url(forResource:"Orders", withExtension: "plist")!
@@ -219,28 +243,39 @@ class TableViewController: UITableViewController {
    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if(headBoolean == true){
+            return filterCount
+        }
+        
         if(MRIFilterBoolean == true || CTFilterBoolean == true) {
             return filterCount
         }
         else {
         return CPTCodeData.count
         }
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //use cell format of customized UITableViewCell
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! HeadlineTableViewCell
-       
+
+        if(headBoolean == true){
+            print("head boolean working")
+            cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
+            cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
+            return cell
+        }
         
         // Configure the cell...
-        if (MRIFilterBoolean == true && CTFilterBoolean == false || CTFilterBoolean == true && MRIFilterBoolean == false) {
+        if (MRIFilterBoolean == true && CTFilterBoolean == false || CTFilterBoolean == true && MRIFilterBoolean == false && headBoolean == false) {
             cell.CPTCodeLabel.text = "CPT Code: \(filterOrder[indexPath.row].CPTCode)"
             cell.CPTShortDescriptionLabel.text = filterOrder[indexPath.row].Short
             return cell
         }
        
         //catalog page displays CPT Code in ascending order
-        if alphabeticalBoolean && MRIFilterBoolean == false {
+       if alphabeticalBoolean && MRIFilterBoolean == false && headBoolean == false {
             cell.CPTCodeLabel.text = "CPT Code: \(CPTCodeData[indexPath.row])"
             cell.CPTShortDescriptionLabel.text = shortData[indexPath.row]
             return cell
@@ -252,6 +287,7 @@ class TableViewController: UITableViewController {
             cell.CPTShortDescriptionLabel.text = sortedDictionary[indexPath.row].Short
             return cell
         }
+       
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
