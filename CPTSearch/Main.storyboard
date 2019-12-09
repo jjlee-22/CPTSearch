@@ -482,7 +482,9 @@
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Search"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="searchButton:" destination="kdA-hQ-RiU" eventType="touchUpInside" id="vUw-3a-nTz"/>
                                 </connections>
@@ -585,7 +587,7 @@
                                 </connections>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Q1e-Ii-PMK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="FNa-3V-GEe"/>
@@ -867,7 +869,7 @@
         <image name="unnamed.jpg" width="900" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EVV-wl-Ph5"/>
+        <segue reference="u6y-ou-cSx"/>
         <segue reference="fp1-Mn-oSU"/>
         <segue reference="dYm-dI-Mbc"/>
         <segue reference="Sj4-4C-zLL"/>
