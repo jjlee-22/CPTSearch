@@ -536,12 +536,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         }
       //  I added a button -Lindsey
-
+    //  MARK: - Search Button
     @IBAction func searchButton(_ sender: UIButton)
     {
         //sendValue.pressedSearchButton = true
         pressedSearchButton = true
         searchAndLongDescStuff()
+        //  Makes the keyboard go away when the Search Button is pressed:
+        textField.resignFirstResponder()
     }
     //  MARK: - loadData2()
     func loadData2()
