@@ -698,7 +698,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             titleLabel?.text = s[orderIndex]
             descriptionLabel?.text = l[orderIndex]
         }
-        else if(CPTCodeData.isEmpty == false && alphabeticalBoolean == true && MRIFilterBoolean == false && CTFilterBoolean == false)
+        else if(CPTCodeData.isEmpty == false && alphabeticalBoolean == true && MRIFilterBoolean == false && CTFilterBoolean == false && headBoolean == false && armBoolean == false && legBoolean == false && handBoolean == false && feetBoolean == false && chestBoolean == false)
          {
             print("Loaded right for Catalog screen")
                 CPTCodeLabel?.text = CPTCodeData[orderIndex]
@@ -707,7 +707,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
          }
         
         
-         else if(CPTCodeData.isEmpty == false && alphabeticalBoolean == false && MRIFilterBoolean == false && CTFilterBoolean == false)
+         else if(CPTCodeData.isEmpty == false && alphabeticalBoolean == false && MRIFilterBoolean == false && CTFilterBoolean == false && headBoolean == false && armBoolean == false && legBoolean == false && handBoolean == false && feetBoolean == false && chestBoolean == false)
          {
             print("Loaded sorted")
              CPTCodeLabel?.text = sortedDictionary[orderIndex].CPTCode
