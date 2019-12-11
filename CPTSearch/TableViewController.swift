@@ -77,7 +77,6 @@ class TableViewController: UITableViewController {
     @IBOutlet var filterView: UIView!
     @IBOutlet var sortButton: UIButton!
     
-    
     //sort catalog short description alphabetically
      @IBAction func sortButton(_ sender: Any) {
         procedureBoolean(MRI: false, CT: false)
