@@ -8,10 +8,28 @@
 
 import UIKit
 
+extension SpecialistsTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        filterContentForSearchText(searchBar.text!)
+    }
+}
+
 class SpecialistsTableViewController: UITableViewController {
 
     //MARK: Properties
     var specialists = [Specialists]()
+    var filteredSpecialists: [Specialists] = []
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    var isSearchBarEmpty: Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    var isFiltering: Bool {
+        return searchController.isActive && !isSearchBarEmpty
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,12 +37,36 @@ class SpecialistsTableViewController: UITableViewController {
         // Load the sample data
         loadSpecialists()
         
+        // UISearchController property
+        //let searchController = UISearchController(searchResultsController: nil)
+        
+        // 1
+        searchController.searchResultsUpdater = self
+        // 2
+        searchController.obscuresBackgroundDuringPresentation = false
+        // 3
+        searchController.searchBar.placeholder = "Search Specialists"
+        // 4
+        navigationItem.searchController = searchController
+        // 5
+        definesPresentationContext = true
+        
+        // isSearchBarEmpty returns true if the next typed in the search bar is empty; otherwise, it returns false
+        /*var isSearchBarEmpty: Bool {
+            return searchController.searchBar.text?.isEmpty ?? true
+        }
+        
+        var isFiltering: Bool {
+            return searchController.isActive && !isSearchBarEmpty
+        }*/
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
 
     // MARK: - Table view data source
 
@@ -35,6 +77,10 @@ class SpecialistsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if isFiltering {
+            return filteredSpecialists.count
+        }
+        
         return specialists.count
     }
 
@@ -46,7 +92,14 @@ class SpecialistsTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? SpecialistsTableViewCell  else {
             fatalError("The dequeued cell is not an instance of SpecialistsTableViewCell")
         }
-        let specialist = specialists[indexPath.row]
+        
+        var specialist = specialists[indexPath.row]
+        
+        if isFiltering {
+            specialist = filteredSpecialists[indexPath.row]
+        } else {
+            specialist = specialists[indexPath.row]
+        }
         
         // Configure cell
         cell.first.text = specialist.firstname
@@ -57,6 +110,14 @@ class SpecialistsTableViewController: UITableViewController {
         
 
         return cell
+    }
+    
+    func filterContentForSearchText(_ searchText: String) {
+        filteredSpecialists = specialists.filter { (specialists: Specialists) -> Bool in
+            return specialists.firstname.lowercased().contains(searchText.lowercased())
+        }
+        
+        tableView.reloadData()
     }
     
 
