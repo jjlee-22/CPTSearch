@@ -389,8 +389,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //alphabeticalBoolean = true
         //MRIFilterBoolean = false
         //CTFilterBoolean = false
-        loadData2()
-        //sendValue.loadData()
+        //loadData2()
+        //loadData()
+        if (shortData.isEmpty == true)
+        {
+            sendValue.loadData()
+        }
         print("Beginning of one search:")
         print()
         //  Deletes everything from the table each search.
@@ -442,11 +446,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
         }*/
                 //for index in shortData2
-                for i in 0 ... 117
+                
+                //  Want more if Truc adds more!
+                //for i in 0 ... 117
+                for i in 0 ... shortData.count - 1
                 {
                     //var index = i
                     //test = index
-                    test = shortData2[i]
+                    //test = shortData2[i]
+                    test = shortData[i]
                     
                     var hashtags = test.hashtags(currentRegularExpression: currentRegularExpression, stringLength: "Full");
                     
@@ -463,10 +471,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         if (index2 != "")
                         {
                             //print(index)
-                            print(shortData2[i])
-                            c.append(CPTCodeData2[i])
-                            s.append(shortData2[i])
-                            l.append(longData2[i])
+                            //print(shortData2[i])
+                            //c.append(CPTCodeData2[i])
+                            //s.append(shortData2[i])
+                            //l.append(longData2[i])
+                            print(shortData[i])
+                            c.append(CPTCodeData[i])
+                            s.append(shortData[i])
+                            l.append(longData[i])
                             resultsCounter = resultsCounter + 1
                             //proceduresList.append(c[i]+s[i])
                             //  Adds it to the table
@@ -516,7 +528,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             numberOfResultsLabel.text = string1 + string2
         for i in 0 ..< s.count
         {
-            proceduresList.append(c[i] + s[i])
+            proceduresList.append(c[i] + " " + s[i])
         }
         print(proceduresList.count)
             
@@ -552,51 +564,57 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //  Need here for my screen, but not for Truc's:
 
         
-        CPTCodeData2.removeAll()
-        shortData2.removeAll()
+        //CPTCodeData2.removeAll()
+        //shortData2.removeAll()
         proceduresList.removeAll()
-        longData2.removeAll()
-        indexTrackerforLongdescription2 = 0
-        indexTrackerforCPTCode2 = 0
-        dictionaryIndex2 = 0
-            
+        //longData2.removeAll()
+        CPTCodeData.removeAll()
+        shortData.removeAll()
+        longData.removeAll()
+        //indexTrackerforLongdescription2 = 0
+        //indexTrackerforCPTCode2 = 0
+        //dictionaryIndex2 = 0
+        indexTrackerforLongdescription = 0
+        indexTrackerforCPTCode = 0
+        dictionaryIndex = 0
+        
         // obtains Orders.plist
-        let url2 = Bundle.main.url(forResource:"Orders", withExtension: "plist")!
+        let url = Bundle.main.url(forResource:"Orders", withExtension: "plist")!
             
         // extract plist info into arrays
         do
         {
-            let data2 = try Data(contentsOf: url2)
-            let sections2 = try PropertyListSerialization.propertyList(from: data2, format: nil) as! [[Any]]
+            let data = try Data(contentsOf: url)
+            let sections = try PropertyListSerialization.propertyList(from: data, format: nil) as! [[Any]]
                 
             // loop through each subarray of plist
             // _ defines unnamed parameter, did not need to keep track of index of each subarray
-            for (_, section) in sections2.enumerated()
+            for (_, section) in sections.enumerated()
             {
                 // obtains all components(CPTCode, short description, and long description of a subarray
                 for item in section
                 {
-                    indexTrackerforLongdescription2+=1
+                    indexTrackerforLongdescription+=1
                     // adds all CPT longDescription to longData
-                    if(indexTrackerforLongdescription2%3==0)
+                    if(indexTrackerforLongdescription%3==0)
                     {
-                        longData2.append(item as! String)
+                        longData.append(item as! String)
                     }
                     else
                     {
                         // adds all CPTCodes to CPTCodeData
-                        if(indexTrackerforCPTCode2%2==0)
+                        if(indexTrackerforCPTCode%2==0)
                         {
-                            CPTCodeData2.append(item as! String)
+                            CPTCodeData.append(item as! String)
                             //proceduresList.append(item as! String)
                         }
                         else
                         {
                             // add all CPT shortDescription to shortData
-                            shortData2.append(item as! String)
+                            shortData.append(item as! String)
                             //proceduresList.append(item as! String)
                         }
-                        indexTrackerforCPTCode2+=1
+                        indexTrackerforCPTCode+=1
                     }
                 }
                 // create dictionary: CPTCodeData (key) --> shortData, longData (values)
@@ -610,9 +628,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print("Error grabbing data from properly list: ", error)
         }
         
-        for i in 0 ..< shortData2.count
+        for i in 0 ..< shortData.count
         {
-            proceduresList.append(CPTCodeData2[i] + shortData2[i])
+            proceduresList.append(CPTCodeData[i] + shortData[i])
         }
         //  Split procedures list into two lists, then go through with a for-loop and combine them into one list and
         //  display that on table.
@@ -648,10 +666,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //sendValue.loadData();
         
         //  Works! 11!
-        if (CPTCodeData.isEmpty == true)
+        /*if (CPTCodeData.isEmpty == true)
         {
             sendValue.loadData()
-        }
+        }*/
         /*if (c.isEmpty == true)
         {
             sendValue.loadData()
