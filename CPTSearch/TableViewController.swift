@@ -86,7 +86,7 @@ class TableViewController: UITableViewController {
      }
     func armFilter(){
         hideView()
-        filterData(keyword: "ARM")
+        filterData(keyword: "UPPER")
         filterCount = filterOrder.count
         displayResults(NumberOfRows: filterCount)
     }
@@ -99,14 +99,14 @@ class TableViewController: UITableViewController {
        }
     func legFilter(){
         hideView()
-        filterData(keyword: "LEG")
+        filterData(keyword: "PELVIS")
         filterCount = filterOrder.count
         displayResults(NumberOfRows: filterCount)
     }
 
     func feetFilter(){
         hideView()
-        filterData(keyword: "FEET")
+        filterData(keyword: "LOWER")
         filterCount = filterOrder.count
         displayResults(NumberOfRows: filterCount)
     }

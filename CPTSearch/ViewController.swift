@@ -715,7 +715,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
              descriptionLabel?.text = sortedDictionary[orderIndex].Long
          }
          
-         else if(MRIFilterBoolean == true || CTFilterBoolean == true || headBoolean == true) {
+         else if(MRIFilterBoolean == true || CTFilterBoolean == true || headBoolean == true || armBoolean == true || legBoolean == true || handBoolean == true || feetBoolean == true || chestBoolean == true) {
             print("Loaded MRI/CT")
              CPTCodeLabel?.text = filterOrder[orderIndex].CPTCode
              titleLabel?.text = filterOrder[orderIndex].Short
