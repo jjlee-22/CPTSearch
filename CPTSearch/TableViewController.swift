@@ -76,13 +76,6 @@ class TableViewController: UITableViewController {
     @IBOutlet var resultLabel: UILabel!
     @IBOutlet var filterView: UIView!
     @IBOutlet var sortButton: UIButton!
-
-    //  I made a segue to your new screen to test
-    //  that the screen fits on an iPhone7 -Lindsey
-    @IBAction func addOrderButton(_ sender: Any)
-    {
-        performSegue(withIdentifier: "catalogToAddOrder", sender: self)
-    }
     
     
     //sort catalog short description alphabetically
