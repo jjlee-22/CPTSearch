@@ -735,11 +735,14 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e11-uK-g7c">
-                                            <rect key="frame" x="309" y="23" width="45" height="45"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQ1-ao-lUh">
+                                            <rect key="frame" x="297" y="24" width="68" height="42"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <state key="normal" title="Call"/>
+                                            <connections>
+                                                <action selector="call:" destination="x7e-wX-tzh" eventType="touchUpInside" id="OL1-kf-bl1"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -760,8 +763,9 @@
                     <navigationItem key="navigationItem" id="EPu-Nq-Gxk"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KV4-0U-WqY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="x7e-wX-tzh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3873.913043478261" y="831.69642857142856"/>
+            <point key="canvasLocation" x="3872.8000000000002" y="831.63418290854577"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fiT-n6-DlP">
