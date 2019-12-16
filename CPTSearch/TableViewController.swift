@@ -52,6 +52,7 @@ var feetBoolean = false
 var chestBoolean = false
 
 
+
 //  For Search Screen, Lindsey:
 var pressedSearchButton = false
 var proceduresList = [String]()
@@ -201,37 +202,37 @@ class TableViewController: UITableViewController {
         {
                if (typeOfBodyPart == "head")
                {
-                       //      call the method that only gets the head data
+                //      call the method that only gets the head data
                 headBoolean = true
                 headFilter()
                }
                else if (typeOfBodyPart == "arm")
                {
-                      //       call a method that only gets the arm data
+                //       call a method that only gets the arm data
                 armBoolean = true
                 armFilter()
                }
             else if (typeOfBodyPart == "leg")
             {
-                   //       call a method that only gets the arm data
+                //       call a method that only gets the leg data
                 legBoolean = true
                 legFilter()
             }
             else if (typeOfBodyPart == "feet")
             {
-                   //       call a method that only gets the arm data
+                //       call a method that only gets the leg data
                 feetBoolean = true
                 feetFilter()
             }
             else if (typeOfBodyPart == "hand")
             {
-                   //       call a method that only gets the arm data
+                //       call a method that only gets the hand data
                 handBoolean = true
                 handFilter()
             }
             else if (typeOfBodyPart == "chest")
             {
-                   //       call a method that only gets the arm data
+                //       call a method that only gets the hand data
                 chestBoolean = true
                 chestFilter()
             }
@@ -299,26 +300,7 @@ class TableViewController: UITableViewController {
    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if(headBoolean == true){
-            return filterCount
-        }
-        if(armBoolean == true){
-            return filterCount
-        }
-        if(legBoolean == true){
-            return filterCount
-        }
-        if(feetBoolean == true){
-            return filterCount
-        }
-        if(handBoolean == true){
-            return filterCount
-        }
-        if(chestBoolean == true){
-            return filterCount
-        }
-        
-        if(MRIFilterBoolean == true || CTFilterBoolean == true) {
+        if(MRIFilterBoolean == true || CTFilterBoolean == true || headBoolean == true || armBoolean == true || legBoolean == true || feetBoolean == true || feetBoolean == true || handBoolean == true || chestBoolean == true) {
             return filterCount
         }
         else {
@@ -385,29 +367,32 @@ class TableViewController: UITableViewController {
        
     }
     
+    @IBAction func unwindToViewControllerA(segue: UIStoryboardSegue) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.resultLabel.text = "\(deleteCounter) results"
+            }
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         pressedSearchButton = false
         orderIndex = indexPath.row
         print(orderIndex)
-        //cell.CPTCodeLabel?.text = CPTCodeData[orderIndex]
-        //print(CPTCodeData[orderIndex])
-        //titleLabel?.text = shortData[orderIndex]
-        //print(shortData[orderIndex])
-        //descriptionLabel?.text = longData[orderIndex]
-        //print(longData[orderIndex])
-        //creates connection to description page
         performSegue(withIdentifier: "segue", sender: self)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
+            
+            
             CPTCodeData.remove(at: indexPath.row)
             shortData.remove(at: indexPath.row)
             longData.remove(at: indexPath.row)
-            
-    
             catalogTableview.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            
                        
             deleteCounter -= 1
             displayResults(NumberOfRows: deleteCounter)

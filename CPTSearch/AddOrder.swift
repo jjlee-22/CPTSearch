@@ -13,9 +13,7 @@ class AddOrder: UIViewController {
     
     
     @IBOutlet weak var CPTCodeTextBox: UITextField!
-    
     @IBOutlet weak var CPTShortTextBox: UITextField!
-    
     @IBOutlet weak var CPTLongTextBox: UITextField!
     
 
@@ -28,5 +26,7 @@ class AddOrder: UIViewController {
         longData.append(CPTLongTextBox.text!)
          CPTDictionary[CPTCodeData[deleteCounter]] = [shortData[deleteCounter], longData[deleteCounter]]
         deleteCounter+=1
+        
+       self.performSegue(withIdentifier: "UnwindToCatalog", sender: self)
     }
 }
